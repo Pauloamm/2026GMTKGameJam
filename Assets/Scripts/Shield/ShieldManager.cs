@@ -10,18 +10,12 @@ public class ShieldManager : MonoBehaviour
     //EVENTS
     public UnityEvent OnShieldStartingRecall;
 
-    private ThrownShieldCollisionManager thrownShieldCollisionManager;
+    private ThrownShieldCollidersManager thrownShieldCollisionManager;
+    private ThrownShieldRicochetBehaviour thrownShieldRicochetBehaviour;
 
     [SerializeField]private GameObject shieldObject;
 
-
-    private enum ShieldState
-    {
-        INHAND,
-        THROWN,
-        RECALLING
-    };
-    private ShieldState currentShieldState;
+    private bool isShieldRecalling;
     private Vector2 shieldDirectionToMove;
     private bool canThrowShieldNextFrame;
     private bool canRecallShieldNextFrame;
@@ -47,17 +41,18 @@ public class ShieldManager : MonoBehaviour
         shieldRigidbody2D = shieldObject.GetComponent<Rigidbody2D>();
 
         //Setur listener on collision manager
-        thrownShieldCollisionManager = shieldObject.GetComponent<ThrownShieldCollisionManager>();
+        thrownShieldCollisionManager = shieldObject.GetComponent<ThrownShieldCollidersManager>();
         thrownShieldCollisionManager.OnShieldCloseToPlayerWhileRecalling.AddListener(OnShieldRecalled);
         OnShieldRecalled();// consider a deactivated shield in the begining
 
-
+        //setup listener for ricochet
+        thrownShieldRicochetBehaviour = shieldObject.GetComponent<ThrownShieldRicochetBehaviour>();
+        thrownShieldRicochetBehaviour.OnShieldRicochet.AddListener(InvertShieldDirectionForRicochet);
 
         canThrowShieldNextFrame = false;
         canRecallShieldNextFrame = false;
         MakeShieldImobile();
 
-        currentShieldState = ShieldState.INHAND;
         shieldObject.transform.SetParent(playerTransformForParenting);
 
 
@@ -73,7 +68,6 @@ public class ShieldManager : MonoBehaviour
         shieldObject.SetActive(false);
         shieldObject.transform.SetParent(playerTransformForParenting);
         shieldObject.transform.localPosition = relativeParentPositionOffset;
-        currentShieldState = ShieldState.THROWN;
 
     }
 
@@ -106,6 +100,7 @@ public class ShieldManager : MonoBehaviour
         if (canRecallShieldNextFrame)
         {
             OnShieldStartingRecall.Invoke();
+            isShieldRecalling = true;
             canRecallShieldNextFrame = false;
 
         }
@@ -128,9 +123,8 @@ public class ShieldManager : MonoBehaviour
 
     void MoveShieldInDirection()
     {
+        if (isShieldRecalling) SetShieldRecalDirection();
         shieldRigidbody2D.linearVelocity = shieldDirectionToMove*shieldThrowVelocity;
-        Debug.Log("Shield VELOCITY " + shieldRigidbody2D.linearVelocity.magnitude);
-        //Debug.Log("Shield Moving");
 
 
     }
@@ -142,6 +136,8 @@ public class ShieldManager : MonoBehaviour
 
     void OnShieldRecalled()
     {
+        isShieldRecalling = false;
+
         //reparent
         shieldObject.transform.parent = playerTransformForParenting;
         shieldObject.transform.localPosition = relativeParentPositionOffset;
@@ -149,7 +145,13 @@ public class ShieldManager : MonoBehaviour
         //reset velocity and throw direction
         shieldRigidbody2D.linearVelocity= Vector2.zero;
         shieldDirectionToMove= Vector2.zero;
+
         //deactivate throw shield, the other is animation
         shieldObject.SetActive(false);
+    }
+
+    void InvertShieldDirectionForRicochet()
+    {
+        shieldDirectionToMove = -shieldDirectionToMove;
     }
 }

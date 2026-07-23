@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 542577419575307329}
   - component: {fileID: 4640485743317836989}
   - component: {fileID: 3135987648307059975}
+  - component: {fileID: 1995180405669909531}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -235,6 +236,23 @@ MonoBehaviour:
   playerTransformForParenting: {fileID: 972013584862974295}
   relativeParentPositionOffset: {x: 0.23, y: 0}
   shieldThrowVelocity: 6
+--- !u!114 &1995180405669909531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166670639185725135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777c6c46b664bec47842f2c34872ce44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLifeManager
+  maxHealth: 5
+  currentHealth: 0
+  invincibilityDuration: 1
+  blinkInterval: 0.1
+  spriteRenderer: {fileID: 935820767139165737}
 --- !u!1 &8010821876629713739
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +267,7 @@ GameObject:
   - component: {fileID: 2887883512391643634}
   - component: {fileID: 858757316630242797}
   - component: {fileID: 6446570811201888297}
+  - component: {fileID: 6920397963342375414}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -367,7 +386,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8010821876629713739}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa50243a9fc4d04d80b3554fd5f7f8c, type: 3}
+  m_Script: {fileID: 11500000, guid: aa504eb9ebd51bd4a846e0f064776a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThrownShieldCollisionManager
   shieldManager: {fileID: 3135987648307059975}
@@ -448,3 +467,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &6920397963342375414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010821876629713739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57fcf94f0d099cf4fb1b1fb3abdd24ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThrownShieldRicochetBehaviour
+  shieldColliderForRicochet: {fileID: 858757316630242797}
+  OnShieldRicochet:
+    m_PersistentCalls:
+      m_Calls: []

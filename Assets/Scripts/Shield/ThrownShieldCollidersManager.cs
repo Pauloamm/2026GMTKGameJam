@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ThrownShieldCollisionManager : MonoBehaviour
+public class ThrownShieldCollidersManager : MonoBehaviour
 {
-
     [SerializeField] ShieldManager shieldManager;
     [SerializeField] Collider2D shieldCollider;
     [SerializeField] Collider2D shieldTrigger;
@@ -13,16 +12,14 @@ public class ThrownShieldCollisionManager : MonoBehaviour
 
     private void Awake()
     {
+        ResetShieldCollidersForNextThrow();
         shieldManager.OnShieldStartingRecall.AddListener(PrepareCollidersWhenStartingRecall);
+
     }
     void PrepareCollidersWhenStartingRecall()
     {
         shieldCollider.enabled = false;
         shieldTrigger.enabled = true;
-    }
-    void PrepareCollidersWhenRecalled()
-    {
-
     }
 
 
@@ -39,5 +36,4 @@ public class ThrownShieldCollisionManager : MonoBehaviour
         shieldCollider.enabled = true;
         shieldTrigger.enabled = false;
     }
-
 }
