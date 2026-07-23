@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,14 +6,21 @@ using UnityEngine.InputSystem;
 public class MainPlayerControl : MonoBehaviour
 {
 
-    [SerializeField] private Rigidbody2D playerRigidbody;
+    //Animation Variables
+    private Vector2 playerHorizontalOrientation;
+    [SerializeField] private Animator playerAnimator;
 
+
+    [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private InputActionAsset gameplayInputMapRef;
 
+
+  
 
     [Header("Jump Variables")]
     [SerializeField] private InputActionReference jumpActionRef;
     [SerializeField] private float jumpForce;
+
 
     private enum JumpState
     {
@@ -62,6 +70,9 @@ public class MainPlayerControl : MonoBehaviour
 
     void Awake()
     {
+        playerHorizontalOrientation = Vector2.one;
+
+
         gameplayInputMapRef.Enable();
         jumpActionRef.action.started += OnJumpActionTrigerred;
         jumpActionRef.action.canceled += OnJumpActionReleased;
@@ -73,32 +84,21 @@ public class MainPlayerControl : MonoBehaviour
 
     private void OnMoveStopped(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Moving button stopped");
+        //Debug.Log("Moving button stopped");
 
         moveInput = Vector2.zero;
-
-    }
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 
     private void OnMovePerforming(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
+
     }
     private void OnJumpActionTrigerred(InputAction.CallbackContext context)
     {
         if (isJumpHeld) return;// for some reason event trigerring multiple times per click :))
 
-        Debug.Log("JUMP BUTTON PRESSED");
 
 
         hasJumpedButtonBeenPressedThisFrame = context.ReadValueAsButton();
@@ -107,7 +107,7 @@ public class MainPlayerControl : MonoBehaviour
     }
     private void OnJumpActionReleased(InputAction.CallbackContext context)
     {
-        Debug.Log("JUMP BUTTON RELEASED");
+        //if (!isJumpHeld) return;
 
         isJumpHeld = false;
     }
@@ -122,10 +122,17 @@ public class MainPlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
 
         //Horizontal Movement
-        if (moveInput != Vector2.zero) playerRigidbody.linearVelocityX = (moveInput.x * horizontalDirectionalForce);
+        if (moveInput != Vector2.zero) {
+
+            playerRigidbody.linearVelocityX = (moveInput.x * horizontalDirectionalForce);
+            playerHorizontalOrientation.x = moveInput.x;
+            this.transform.localScale = playerHorizontalOrientation;
+
+
+        } 
         else ResetPlayerHorizontalLinearVelocity();
 
         //Jump check
@@ -134,6 +141,7 @@ public class MainPlayerControl : MonoBehaviour
         {
             currentJumpState = JumpState.Grounded;
             jumpHoldStepCounter = 0;
+            LeaveJumpAnimationAnimation();
         }
         ManageCoyoteTimeCounter(isGrounded);
 
@@ -146,7 +154,8 @@ public class MainPlayerControl : MonoBehaviour
         {
             jumpHoldStepCounter += 1; // Steps-> FixedUpdate Ran how many times
             currentJumpState = GetJumpStateFromSteps();
-            ApplyGravityForJumpState(this.currentJumpState);
+            ApplyGravityForJumpState(currentJumpState);
+            TriggerJumpAnimation();
 
         }
 
@@ -174,8 +183,8 @@ public class MainPlayerControl : MonoBehaviour
             nextFrameJumpState = JumpState.JumpingFloat;
 
 
-        Debug.Log("HOLD JUMP STEP COUNTER: " + jumpHoldStepCounter);
-        Debug.Log("JUMP STATE: " + nextFrameJumpState);
+        //Debug.Log("HOLD JUMP STEP COUNTER: " + jumpHoldStepCounter);
+        //Debug.Log("JUMP STATE: " + nextFrameJumpState);
         return nextFrameJumpState;
     }
 
@@ -221,14 +230,29 @@ public class MainPlayerControl : MonoBehaviour
     private void MakePlayerJump() {
         playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         currentJumpState = GetJumpStateFromSteps();
-    }  
+    }
+
+    private void TriggerJumpAnimation() {
+
+
+        playerAnimator.ResetTrigger("JumpFinished");
+        playerAnimator.SetTrigger("JumpStarted");
+
+    }
     
+    private void LeaveJumpAnimationAnimation() {
+
+        playerAnimator.ResetTrigger("JumpStarted");
+        playerAnimator.SetTrigger("JumpFinished");
+
+
+    }
 
     //Debug
     private void OnDrawGizmosSelected()
     {
         Vector2 origin = (Vector2)transform.position + groundCheckOffset;
-        Gizmos.color = isGrounded ? Color.green : Color.red;
+        Gizmos.color = isGrounded ? Color.cyan : Color.red;
         Gizmos.DrawLine(origin, origin + Vector2.down * groundCheckDistance);
     }
 }
