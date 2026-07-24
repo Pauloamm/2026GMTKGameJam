@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 2072680313599744749}
   - component: {fileID: 413721664660971561}
   - component: {fileID: 375648651213398898}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerDetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
