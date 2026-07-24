@@ -9,8 +9,8 @@ public class MeleeAttackBehaviour : MonoBehaviour
     [SerializeField] private float recoveryDuration = 0.5f;
 
     [Header("Attack")]
-    [SerializeField] private int damage = 1;
-    [SerializeField] private Collider2D attackHitbox;
+    [SerializeField] private AttackHitbox attackHitbox;
+    [SerializeField] private Collider2D hitboxCollider;
 
     [Header("Events")]
     public UnityEvent OnWindupStart;
@@ -21,11 +21,10 @@ public class MeleeAttackBehaviour : MonoBehaviour
     private bool isAttacking;
     public bool IsAttacking => isAttacking;
 
-
-
     private void Awake()
     {
-        attackHitbox.enabled = false;
+        hitboxCollider.enabled = false;
+        attackHitbox.IsParryable = false;
     }
 
     public void TryAttack()
@@ -36,43 +35,33 @@ public class MeleeAttackBehaviour : MonoBehaviour
 
     private System.Collections.IEnumerator AttackRoutine()
     {
-        this.isAttacking = true;
+        isAttacking = true;
 
         OnWindupStart?.Invoke();
-        Debug.Log("STARTED WINDUP");
         yield return new WaitForSeconds(windupDuration);
 
         EnableHitbox();
+        attackHitbox.IsParryable = true;
         OnAttackStart?.Invoke();
-        Debug.Log("STARTED ATTACK HITBOX");
 
         yield return new WaitForSeconds(activeDuration);
 
         DisableHitbox();
+        attackHitbox.IsParryable = false;
         OnRecoveryStart?.Invoke();
         yield return new WaitForSeconds(recoveryDuration);
 
-        this.isAttacking = false;
+        isAttacking = false;
         OnAttackFinished?.Invoke();
     }
 
     public void EnableHitbox()
     {
-        attackHitbox.enabled = true;
+        hitboxCollider.enabled = true;
     }
 
     public void DisableHitbox()
     {
-       attackHitbox.enabled = false;
+        hitboxCollider.enabled = false;
     }
-
-   //private void OnTriggerEnter2D(Collider2D other)
-   //{
-   //    if (!attackHitbox.enabled) return;
-   //
-   //    if (other.TryGetComponent<IDamageable>(out IDamageable damageable))
-   //    {
-   //        damageable.TakeDamage(damage);
-   //    }
-   //}
 }

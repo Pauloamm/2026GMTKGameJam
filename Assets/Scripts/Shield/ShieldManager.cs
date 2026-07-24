@@ -14,6 +14,7 @@ public class ShieldManager : MonoBehaviour
     private ThrownShieldRicochetBehaviour thrownShieldRicochetBehaviour;
 
     [SerializeField]private GameObject shieldObject;
+    public UnityEvent OnShieldThrown;
 
     private bool isShieldRecalling;
     private Vector2 shieldDirectionToMove;
@@ -33,8 +34,9 @@ public class ShieldManager : MonoBehaviour
 
     private Rigidbody2D shieldRigidbody2D;
     [SerializeField] private float shieldThrowVelocity;
-
-
+    
+    //SOURCE OF TRUTH FOR SHIELD HELD
+    public bool IsShieldHeld { get; private set; } = true;
     void Awake()
     {
         //Get shield rb
@@ -75,6 +77,9 @@ public class ShieldManager : MonoBehaviour
     {
         canThrowShieldNextFrame = true;
         SetShieldThrowDirection();
+        IsShieldHeld = false;
+        OnShieldThrown?.Invoke();
+
 
     }
 
@@ -137,6 +142,7 @@ public class ShieldManager : MonoBehaviour
     void OnShieldRecalled()
     {
         isShieldRecalling = false;
+        IsShieldHeld = true;
 
         //reparent
         shieldObject.transform.parent = playerTransformForParenting;

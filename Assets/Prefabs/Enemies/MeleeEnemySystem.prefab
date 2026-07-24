@@ -226,8 +226,8 @@ MonoBehaviour:
   windupDuration: 0.4
   activeDuration: 0.2
   recoveryDuration: 0.5
-  damage: 1
-  attackHitbox: {fileID: 431925967808142446}
+  attackHitbox: {fileID: 6177466107972490239}
+  hitboxCollider: {fileID: 431925967808142446}
   OnWindupStart:
     m_PersistentCalls:
       m_Calls: []
@@ -508,6 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7460689556807074863}
   - component: {fileID: 431925967808142446}
+  - component: {fileID: 6177466107972490239}
   m_Layer: 0
   m_Name: MeleeAttackHitbox
   m_TagString: Untagged
@@ -560,7 +561,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -576,3 +577,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6177466107972490239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925088901269433653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a2619a2ec33614ea6c69d01dd9988b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackHitbox
+  damage: 1
+  isParryable: 0
+  OnParried:
+    m_PersistentCalls:
+      m_Calls: []
