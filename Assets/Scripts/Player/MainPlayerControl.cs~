@@ -1,0 +1,87 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+
+public class MainPlayerControl : MonoBehaviour
+{
+    
+    [SerializeField] private Rigidbody2D playerRigidbody;
+    
+    [SerializeField] private InputActionAsset gameplayInputMapRef;
+    
+    
+    [Header("Jump Variables")]
+    [SerializeField] private InputActionReference jumpActionRef;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private bool isGrounded;
+    private bool hasJumpedButtonBeenPressedThisFrame; 
+
+    [Header("Horizontal Movement")]
+    [SerializeField] private InputActionReference moveActionRef;
+    [SerializeField] private float horizontalDirectionalForce;
+    private Vector2 moveInput; 
+
+    void Awake()
+    {
+        gameplayInputMapRef.Enable();
+        jumpActionRef.action.started+=OnJumpActionTrigerred;
+        
+        moveActionRef.action.performed+= OnMovePerforming;
+        moveActionRef.action.canceled+= OnMoveStopped;
+
+    }
+
+    private void OnMoveStopped(InputAction.CallbackContext ctx)
+    { 
+        Debug.Log("Moving button stopped");
+
+        moveInput = Vector2.zero;
+
+    }
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnMovePerforming(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("Moving button pressed");
+
+        moveInput = ctx.ReadValue<Vector2>();
+        
+        Debug.Log("Moving button value  "+moveInput );
+
+        
+    }
+    private void OnJumpActionTrigerred(InputAction.CallbackContext context)
+    {
+        
+        Debug.Log("JUMP BUTTON PRESSED");
+        hasJumpedButtonBeenPressedThisFrame= context.ReadValueAsButton();
+    }
+    
+    private void FixedUpdate()
+    {
+        if (moveInput != Vector2.zero)
+        {
+            playerRigidbody.linearVelocityX = (moveInput.x * horizontalDirectionalForce);
+        }
+        else
+        {
+            playerRigidbody.linearVelocityX = 0f;
+        }
+        if (hasJumpedButtonBeenPressedThisFrame)
+        {
+            playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            hasJumpedButtonBeenPressedThisFrame = false;
+        }
+
+    }
+}
