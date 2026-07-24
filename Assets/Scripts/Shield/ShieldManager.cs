@@ -116,11 +116,15 @@ public class ShieldManager : MonoBehaviour
 
     void SetShieldThrowDirection()
     {
+        if (playerTransformForParenting == null) return; // when player dies when shield is out
+
         shieldDirectionToMove.x = playerTransformForParenting.localScale.x;// change only left right
     }
 
     void SetShieldRecalDirection()
     {
+        if (playerTransformForParenting == null) return; // when player dies while shield recalling
+
         shieldDirectionToMove = (playerTransformForParenting.position - shieldObject.transform.position).normalized;
     }
 

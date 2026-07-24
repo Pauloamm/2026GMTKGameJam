@@ -12,13 +12,28 @@ public class Projectile : MonoBehaviour
     public UnityEvent OnDestroyed;
 
     private Collider2D enemyToIgnore;
+
+    [Header("Rotation")]
+    [SerializeField] private bool rotateToFaceDirection;
+    private Rigidbody2D rb;
+
     public void SetEnemyColliderToIgnore(Collider2D enemyThatShot) => enemyToIgnore = enemyThatShot;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Start()
     {
         Invoke(nameof(DestroyProjectile), lifetime);
     }
-
+    private void Update()
+    {
+        if (rotateToFaceDirection && rb.linearVelocity != Vector2.zero)
+        {
+            transform.up = rb.linearVelocity.normalized;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
 

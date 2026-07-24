@@ -169,6 +169,7 @@ MonoBehaviour:
   OnDestroyed:
     m_PersistentCalls:
       m_Calls: []
+  rotateToFaceDirection: 1
 --- !u!50 &269281081184552412
 Rigidbody2D:
   serializedVersion: 5

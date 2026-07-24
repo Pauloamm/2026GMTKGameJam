@@ -207,11 +207,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777c6c46b664bec47842f2c34872ce44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLifeManager
-  maxHealth: 5
+  maxHealth: 6
   currentHealth: 0
   invincibilityDuration: 1
   blinkInterval: 0.1
   spriteRenderer: {fileID: 935820767139165737}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &4640485743317836989
 Animator:
   serializedVersion: 7

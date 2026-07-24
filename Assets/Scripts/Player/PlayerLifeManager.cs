@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerLifeManager : MonoBehaviour, IDamageable
 {
@@ -16,17 +17,21 @@ public class PlayerLifeManager : MonoBehaviour, IDamageable
     private bool isInvincible;
 
     public event Action OnDeath;
+    public UnityEvent<int> OnHealthChanged;
 
     private void Awake()
     {
         currentHealth = maxHealth;
+        OnHealthChanged?.Invoke(currentHealth);
+
     }
 
     public void TakeDamage(int damage)
     {
-        if (isInvincible || currentHealth <= 0) return;
+        if (isInvincible) return;// || currentHealth <= 0) return;
 
         currentHealth -= damage;
+        OnHealthChanged?.Invoke(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -59,5 +64,15 @@ public class PlayerLifeManager : MonoBehaviour, IDamageable
     private void Die()
     {
         OnDeath?.Invoke();
+
+        Destroy(this.gameObject);// destroy player for now, maybe animation or soemthing later
     }
+    public void ForceDeath()
+    {
+        //if (currentHealth <= 0) return;
+
+        currentHealth = 0;
+        Die();
+    }
+
 }
