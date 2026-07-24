@@ -27,7 +27,6 @@ public class MeleeEnemy : EnemyBase
     {
         base.Awake();
 
-        //Player DetectionZone events
         PlayerDetectionZone enemyDetectionZone;
         enemyDetectionZone = GetComponentInChildren<PlayerDetectionZone>();
         enemyDetectionZone.OnPlayerEnter.AddListener(HandlePlayerEnterRange);
@@ -35,6 +34,11 @@ public class MeleeEnemy : EnemyBase
 
         rb = GetComponent<Rigidbody2D>();
         attackBehaviour = GetComponent<MeleeAttackBehaviour>();
+
+        AttackHitbox hitbox = GetComponentInChildren<AttackHitbox>();
+        hitbox.IgnoreColliders(GetComponentsInChildren<Collider2D>());
+
+
     }
 
     public void HandlePlayerEnterRange(Transform playerTransform)

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,16 +13,26 @@ public class AttackHitbox : MonoBehaviour
 
     public UnityEvent OnParried;
 
+    private readonly List<Collider2D> collidersToIgnore = new List<Collider2D>();
+
     public bool IsParryable
     {
         get => isParryable;
         set => isParryable = value;
     }
 
+    public void IgnoreColliders(IEnumerable<Collider2D> colliders)
+    {
+        collidersToIgnore.AddRange(colliders);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (collidersToIgnore.Contains(other)) return;
+
         // if it doesnt hit a player at least check if it deals damage
-        if (!other.CompareTag("Player")) {
+        if (!other.CompareTag("Player"))
+        {
 
             if (other.TryGetComponent<IDamageable>(out IDamageable damageable))
             {
@@ -30,7 +41,7 @@ public class AttackHitbox : MonoBehaviour
             }
 
             return;
-        } 
+        }
 
         //If it is player get necessary components
         PlayerParrySystem playerParrySystem = other.GetComponentInChildren<PlayerParrySystem>();

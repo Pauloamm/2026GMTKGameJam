@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Projectile : MonoBehaviour
+public class GroundMovingHazard : MonoBehaviour
 {
     [Header("Lifetime")]
     [SerializeField] private float lifetime = 5f;
@@ -14,44 +14,28 @@ public class Projectile : MonoBehaviour
 
     private readonly List<Collider2D> collidersToIgnore = new List<Collider2D>();
 
-    [Header("Rotation")]
-    [SerializeField] private bool rotateToFaceDirection;
-    private Rigidbody2D rb;
-
-
     public void IgnoreColliders(IEnumerable<Collider2D> colliders) => collidersToIgnore.AddRange(colliders);
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
     private void Start()
     {
-        Invoke(nameof(DestroyProjectile), lifetime);
+        Invoke(nameof(DestroyHazard), lifetime);
     }
-    private void Update()
-    {
-        if (rotateToFaceDirection && rb.linearVelocity != Vector2.zero)
-        {
-            transform.up = rb.linearVelocity.normalized;
-        }
-    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (collidersToIgnore.Contains(other)) return;
 
-        bool hitPlayer = other.CompareTag("Player");
         bool hitEnvironment = (destroyOnLayers.value & (1 << other.gameObject.layer)) != 0;
 
-        if (hitPlayer || hitEnvironment)
+        if (hitEnvironment)
         {
-            DestroyProjectile();
+            DestroyHazard();
         }
     }
 
-    private void DestroyProjectile()
+    private void DestroyHazard()
     {
-        CancelInvoke(nameof(DestroyProjectile));
+        CancelInvoke(nameof(DestroyHazard));
         OnDestroyed?.Invoke();
         Destroy(gameObject);
     }

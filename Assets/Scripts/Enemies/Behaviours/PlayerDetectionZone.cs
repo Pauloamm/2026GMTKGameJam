@@ -42,6 +42,23 @@ public class PlayerDetectionZone : MonoBehaviour
 
         gizmoColor.a = 0.1f;
         Gizmos.color = gizmoColor;
-        Gizmos.DrawSphere(this.transform.position, this.GetComponent<CircleCollider2D>().radius);
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col == null) return;
+
+        if (col is CircleCollider2D circleCollider)
+        {
+            Gizmos.DrawSphere(transform.position, circleCollider.radius * Mathf.Max(transform.lossyScale.x, transform.lossyScale.y));
+        }
+        else if (col is BoxCollider2D boxCollider)
+        {
+            Vector3 size = new Vector3(
+                boxCollider.size.x * transform.lossyScale.x,
+                boxCollider.size.y * transform.lossyScale.y,
+                0.01f
+            );
+            Vector3 center = transform.position + (Vector3)(boxCollider.offset * transform.lossyScale);
+            Gizmos.DrawCube(center, size);
+        }
     }
 }
