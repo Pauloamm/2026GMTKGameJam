@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: adf2a65aee7fe1845ac4f546239a28c3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6955394593685207245
+    second: OfficeBackground_Layer2_0
+  - first:
+      213: -5768652409498559223
+    second: OfficeBackground_Layer2_1
+  - first:
+      213: -4557762999870528009
+    second: OfficeBackground_Layer2_2
+  - first:
+      213: 2896900875266233777
+    second: OfficeBackground_Layer2_3
+  - first:
+      213: -9142988196045826852
+    second: OfficeBackground_Layer2_4
+  - first:
+      213: 2455954048492948578
+    second: OfficeBackground_Layer2_5
+  - first:
+      213: 2097717249477246019
+    second: OfficeBackground_Layer2_6
+  - first:
+      213: 193181133580637994
+    second: OfficeBackground_Layer2_7
+  - first:
+      213: -3749664693516411787
+    second: OfficeBackground_Layer2_8
+  - first:
+      213: 8141904529900087484
+    second: OfficeBackground_Layer2_9
+  - first:
+      213: -8739191981864376164
+    second: OfficeBackground_Layer2_10
+  - first:
+      213: 5782298367045951331
+    second: OfficeBackground_Layer2_11
+  - first:
+      213: -3320905681458071757
+    second: OfficeBackground_Layer2_12
+  - first:
+      213: -5968604470291960787
+    second: OfficeBackground_Layer2_13
+  - first:
+      213: 7261859063397606242
+    second: OfficeBackground_Layer2_14
+  - first:
+      213: 5151778058242699077
+    second: OfficeBackground_Layer2_15
+  - first:
+      213: 326095643502235869
+    second: OfficeBackground_Layer2_16
+  - first:
+      213: -3677073082167269309
+    second: OfficeBackground_Layer2_17
+  - first:
+      213: 3191181855458904526
+    second: OfficeBackground_Layer2_18
+  - first:
+      213: -536274491477161454
+    second: OfficeBackground_Layer2_19
+  - first:
+      213: 7389878584967905912
+    second: OfficeBackground_Layer2_20
+  - first:
+      213: 2385899977727186787
+    second: OfficeBackground_Layer2_21
+  - first:
+      213: 5644411347865346294
+    second: OfficeBackground_Layer2_22
+  - first:
+      213: -2962502035500312067
+    second: OfficeBackground_Layer2_23
+  - first:
+      213: 5473816810903675772
+    second: OfficeBackground_Layer2_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 5084
+        height: 1709
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33788b2e779797f90800000000000000
+      internalID: -6955394593685207245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_1
+      rect:
+        serializedVersion: 2
+        x: 1926
+        y: 1206
+        width: 72
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90d132b7231a1ffa0800000000000000
+      internalID: -5768652409498559223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_2
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1136
+        width: 112
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f56c4e13b29fb0c0800000000000000
+      internalID: -4557762999870528009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_3
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1116
+        width: 122
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b513c36ffbd33820800000000000000
+      internalID: 2896900875266233777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_4
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 1066
+        width: 252
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd459156da49d1180800000000000000
+      internalID: -9142988196045826852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_5
+      rect:
+        serializedVersion: 2
+        x: 2586
+        y: 1066
+        width: 312
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26cca15e13d451220800000000000000
+      internalID: 2455954048492948578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_6
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 1076
+        width: 262
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34cfc4669b69c1d10800000000000000
+      internalID: 2097717249477246019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_7
+      rect:
+        serializedVersion: 2
+        x: 4736
+        y: 1086
+        width: 142
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27916ca7315ea200800000000000000
+      internalID: 193181133580637994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1006
+        width: 172
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c512ce3d386fbc0800000000000000
+      internalID: -3749664693516411787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_9
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1056
+        width: 92
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8a6d3480bddf070800000000000000
+      internalID: 8141904529900087484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_10
+      rect:
+        serializedVersion: 2
+        x: 4896
+        y: 1036
+        width: 92
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c982809d13728b680800000000000000
+      internalID: -8739191981864376164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_11
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 956
+        width: 92
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f58199ab9de3050800000000000000
+      internalID: 5782298367045951331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_12
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 946
+        width: 262
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3377d1ca0e5c9e1d0800000000000000
+      internalID: -3320905681458071757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_13
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 966
+        width: 132
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c60777bd14b2da0800000000000000
+      internalID: -5968604470291960787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_14
+      rect:
+        serializedVersion: 2
+        x: 4316
+        y: 986
+        width: 132
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263e3cad75e47c460800000000000000
+      internalID: 7261859063397606242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_15
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 876
+        width: 232
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f253349dace7740800000000000000
+      internalID: 5151778058242699077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_16
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 946
+        width: 82
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0d0c19246868400800000000000000
+      internalID: 326095643502235869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_17
+      rect:
+        serializedVersion: 2
+        x: 3326
+        y: 916
+        width: 222
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 348e444838968fcc0800000000000000
+      internalID: -3677073082167269309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_18
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 846
+        width: 232
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9cc4c6dfa594c20800000000000000
+      internalID: 3191181855458904526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_19
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 876
+        width: 92
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21a8669f035ce88f0800000000000000
+      internalID: -536274491477161454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_20
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 876
+        width: 102
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87247467b6f1e8660800000000000000
+      internalID: 7389878584967905912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_21
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 826
+        width: 182
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3679a02836b6c1120800000000000000
+      internalID: 2385899977727186787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_22
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 776
+        width: 102
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f0a2bb273af45e40800000000000000
+      internalID: 5644411347865346294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_23
+      rect:
+        serializedVersion: 2
+        x: 4226
+        y: 816
+        width: 182
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9d1af381413e6d0800000000000000
+      internalID: -2962502035500312067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfficeBackground_Layer2_24
+      rect:
+        serializedVersion: 2
+        x: 4926
+        y: 796
+        width: 132
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c73a9735367e6fb40800000000000000
+      internalID: 5473816810903675772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ff5fc4ed42f3ffb459dabd046c560e30
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      OfficeBackground_Layer2_0: -6955394593685207245
+      OfficeBackground_Layer2_1: -5768652409498559223
+      OfficeBackground_Layer2_10: -8739191981864376164
+      OfficeBackground_Layer2_11: 5782298367045951331
+      OfficeBackground_Layer2_12: -3320905681458071757
+      OfficeBackground_Layer2_13: -5968604470291960787
+      OfficeBackground_Layer2_14: 7261859063397606242
+      OfficeBackground_Layer2_15: 5151778058242699077
+      OfficeBackground_Layer2_16: 326095643502235869
+      OfficeBackground_Layer2_17: -3677073082167269309
+      OfficeBackground_Layer2_18: 3191181855458904526
+      OfficeBackground_Layer2_19: -536274491477161454
+      OfficeBackground_Layer2_2: -4557762999870528009
+      OfficeBackground_Layer2_20: 7389878584967905912
+      OfficeBackground_Layer2_21: 2385899977727186787
+      OfficeBackground_Layer2_22: 5644411347865346294
+      OfficeBackground_Layer2_23: -2962502035500312067
+      OfficeBackground_Layer2_24: 5473816810903675772
+      OfficeBackground_Layer2_3: 2896900875266233777
+      OfficeBackground_Layer2_4: -9142988196045826852
+      OfficeBackground_Layer2_5: 2455954048492948578
+      OfficeBackground_Layer2_6: 2097717249477246019
+      OfficeBackground_Layer2_7: 193181133580637994
+      OfficeBackground_Layer2_8: -3749664693516411787
+      OfficeBackground_Layer2_9: 8141904529900087484
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

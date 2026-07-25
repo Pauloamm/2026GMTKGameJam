@@ -1,0 +1,635 @@
+fileFormatVersion: 2
+guid: c69d86f705f867142b9cfa75227632d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8884314913896468800
+    second: fumo_ground_slam_0
+  - first:
+      213: 5129315974241745797
+    second: fumo_ground_slam_1
+  - first:
+      213: 1884334990071149410
+    second: fumo_ground_slam_2
+  - first:
+      213: 9152092864583299585
+    second: fumo_ground_slam_3
+  - first:
+      213: 4414614155602864484
+    second: fumo_ground_slam_4
+  - first:
+      213: 1156975809963566549
+    second: fumo_ground_slam_5
+  - first:
+      213: -5471770832440516490
+    second: fumo_ground_slam_6
+  - first:
+      213: -6299996159961791418
+    second: fumo_ground_slam_7
+  - first:
+      213: 1513854710858357276
+    second: fumo_ground_slam_8
+  - first:
+      213: 583504322156447622
+    second: fumo_ground_slam_9
+  - first:
+      213: -7974090545671119885
+    second: fumo_ground_slam_10
+  - first:
+      213: 4330409680978335729
+    second: fumo_ground_slam_11
+  - first:
+      213: 3047080127962385305
+    second: fumo_ground_slam_12
+  - first:
+      213: -2782067317766163558
+    second: fumo_ground_slam_13
+  - first:
+      213: 8880428949702201356
+    second: fumo_ground_slam_14
+  - first:
+      213: -6122809431783401769
+    second: fumo_ground_slam_15
+  - first:
+      213: -2628736263196563581
+    second: fumo_ground_slam_16
+  - first:
+      213: 5369025983905034494
+    second: fumo_ground_slam_17
+  - first:
+      213: -164911157333303870
+    second: fumo_ground_slam_18
+  - first:
+      213: -5016481629385342553
+    second: fumo_ground_slam_19
+  - first:
+      213: -6044696425336176333
+    second: fumo_ground_slam_20
+  - first:
+      213: 7124599339280305127
+    second: fumo_ground_slam_21
+  - first:
+      213: 4121654266474863731
+    second: fumo_ground_slam_22
+  - first:
+      213: -8357048424633154309
+    second: fumo_ground_slam_23
+  - first:
+      213: -2183914692041863614
+    second: fumo_ground_slam_24
+  - first:
+      213: -913138219946408566
+    second: fumo_ground_slam_25
+  - first:
+      213: 1837430924958454139
+    second: fumo_ground_slam_26
+  - first:
+      213: 9086723722008963174
+    second: fumo_ground_slam_27
+  - first:
+      213: 457438242402448634
+    second: fumo_ground_slam_28
+  - first:
+      213: 1010322096164327545
+    second: fumo_ground_slam_29
+  - first:
+      213: 1748628082961542170
+    second: fumo_ground_slam_30
+  - first:
+      213: -3761732093482616584
+    second: fumo_ground_slam_31
+  - first:
+      213: -6081117965819024525
+    second: fumo_ground_slam_32
+  - first:
+      213: 3843868810552956060
+    second: fumo_ground_slam_33
+  - first:
+      213: 5893820663377216384
+    second: fumo_ground_slam_34
+  - first:
+      213: -2554378219870536515
+    second: fumo_ground_slam_35
+  - first:
+      213: 2802773427829474204
+    second: fumo_ground_slam_36
+  - first:
+      213: -8768998920227225731
+    second: fumo_ground_slam_37
+  - first:
+      213: -422031431520142265
+    second: fumo_ground_slam_38
+  - first:
+      213: 617963010338345256
+    second: fumo_ground_slam_39
+  - first:
+      213: -3765326295718569943
+    second: fumo_ground_slam_40
+  - first:
+      213: 3037397415855057376
+    second: fumo_ground_slam_41
+  - first:
+      213: 433665902390951497
+    second: fumo_ground_slam_42
+  - first:
+      213: -3613251463790186063
+    second: fumo_ground_slam_43
+  - first:
+      213: 4129371267037037891
+    second: fumo_ground_slam_44
+  - first:
+      213: -6683385726272767482
+    second: fumo_ground_slam_45
+  - first:
+      213: 3229566829281705781
+    second: fumo_ground_slam_46
+  - first:
+      213: -7156388088464406634
+    second: fumo_ground_slam_47
+  - first:
+      213: -5400869467588697570
+    second: fumo_ground_slam_48
+  - first:
+      213: 5386351935411096135
+    second: fumo_ground_slam_49
+  - first:
+      213: -4936603121005691128
+    second: fumo_ground_slam_50
+  - first:
+      213: 6703659112183455128
+    second: fumo_ground_slam_51
+  - first:
+      213: -6568826548067578484
+    second: fumo_ground_slam_52
+  - first:
+      213: -2201072403757051776
+    second: fumo_ground_slam_53
+  - first:
+      213: -1381757065004886890
+    second: fumo_ground_slam_54
+  - first:
+      213: -975168851442569923
+    second: fumo_ground_slam_55
+  - first:
+      213: 6109020935175541330
+    second: fumo_ground_slam_56
+  - first:
+      213: 1407573130063182551
+    second: fumo_ground_slam_57
+  - first:
+      213: 7221709059677818527
+    second: fumo_ground_slam_58
+  - first:
+      213: 2346716747952515468
+    second: fumo_ground_slam_59
+  - first:
+      213: 5526010278617379517
+    second: fumo_ground_slam_60
+  - first:
+      213: -1489883745551566528
+    second: fumo_ground_slam_61
+  - first:
+      213: 1411015077276456205
+    second: fumo_ground_slam_62
+  - first:
+      213: 6850225051517856902
+    second: fumo_ground_slam_63
+  - first:
+      213: -4447188587999674520
+    second: fumo_ground_slam_64
+  - first:
+      213: 4661588224085365728
+    second: fumo_ground_slam_65
+  - first:
+      213: 4215231478899172638
+    second: fumo_ground_slam_66
+  - first:
+      213: 5278745148886800162
+    second: fumo_ground_slam_67
+  - first:
+      213: -222049240283780194
+    second: fumo_ground_slam_68
+  - first:
+      213: -5966996635940257461
+    second: fumo_ground_slam_69
+  - first:
+      213: -2202273379524504972
+    second: fumo_ground_slam_70
+  - first:
+      213: 2518276355265787173
+    second: fumo_ground_slam_71
+  - first:
+      213: -6595926701209598262
+    second: fumo_ground_slam_72
+  - first:
+      213: 9122736542467842353
+    second: fumo_ground_slam_73
+  - first:
+      213: 1063577641541024499
+    second: fumo_ground_slam_74
+  - first:
+      213: -6863800820564259916
+    second: fumo_ground_slam_75
+  - first:
+      213: -645224497917977491
+    second: fumo_ground_slam_76
+  - first:
+      213: 5940369378600014265
+    second: fumo_ground_slam_77
+  - first:
+      213: 1174749370362205688
+    second: fumo_ground_slam_78
+  - first:
+      213: 7270440962868015151
+    second: fumo_ground_slam_79
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fumo_ground_slam_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12288
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0411183d75d6b4b70800000000000000
+      internalID: 8884314913896468800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_1
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 12288
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b7a69c3bdfe2740800000000000000
+      internalID: 5129315974241745797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_2
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 12288
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263b70990b0862a10800000000000000
+      internalID: 1884334990071149410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8192
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102ffd078f3c20f70800000000000000
+      internalID: 9152092864583299585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 8192
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469ae155f2cd34d30800000000000000
+      internalID: 4414614155602864484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_5
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 8192
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d529968e576e0010800000000000000
+      internalID: 1156975809963566549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4096
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6702a082b6d5014b0800000000000000
+      internalID: -5471770832440516490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_7
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4096
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644072f0fdae198a0800000000000000
+      internalID: -6299996159961791418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_8
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 4096
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a934ab6da420510800000000000000
+      internalID: 1513854710858357276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6874a07e616091800800000000000000
+      internalID: 583504322156447622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_10
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fbd872b5e6565190800000000000000
+      internalID: -7974090545671119885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fumo_ground_slam_11
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 0
+        width: 4096
+        height: 4096
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f750ae49a4b81c30800000000000000
+      internalID: 4330409680978335729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2933756a64825b94191cf56765b5e969
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":4.0},"gridSpriteSize":{"x":4096.0,"y":4096.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      fumo_ground_slam_0: 8884314913896468800
+      fumo_ground_slam_1: 5129315974241745797
+      fumo_ground_slam_10: -7974090545671119885
+      fumo_ground_slam_11: 4330409680978335729
+      fumo_ground_slam_2: 1884334990071149410
+      fumo_ground_slam_3: 9152092864583299585
+      fumo_ground_slam_4: 4414614155602864484
+      fumo_ground_slam_5: 1156975809963566549
+      fumo_ground_slam_6: -5471770832440516490
+      fumo_ground_slam_7: -6299996159961791418
+      fumo_ground_slam_8: 1513854710858357276
+      fumo_ground_slam_9: 583504322156447622
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,6 +12,9 @@ public class MeleeAttackBehaviour : MonoBehaviour
     [SerializeField] private AttackHitbox attackHitbox;
     [SerializeField] private Collider2D hitboxCollider;
 
+    [Header("Animation")]
+    [SerializeField] private bool isAnimationDriven;
+
     [Header("Events")]
     public UnityEvent OnWindupStart;
     public UnityEvent OnAttackStart;
@@ -40,14 +43,12 @@ public class MeleeAttackBehaviour : MonoBehaviour
         OnWindupStart?.Invoke();
         yield return new WaitForSeconds(windupDuration);
 
-        EnableHitbox();
-        attackHitbox.IsParryable = true;
+        if (!isAnimationDriven) EnableHitbox();
         OnAttackStart?.Invoke();
 
         yield return new WaitForSeconds(activeDuration);
 
-        DisableHitbox();
-        attackHitbox.IsParryable = false;
+        if (!isAnimationDriven) DisableHitbox();
         OnRecoveryStart?.Invoke();
         yield return new WaitForSeconds(recoveryDuration);
 
@@ -58,10 +59,12 @@ public class MeleeAttackBehaviour : MonoBehaviour
     public void EnableHitbox()
     {
         hitboxCollider.enabled = true;
+        attackHitbox.IsParryable = true;
     }
 
     public void DisableHitbox()
     {
         hitboxCollider.enabled = false;
+        attackHitbox.IsParryable = false;
     }
 }

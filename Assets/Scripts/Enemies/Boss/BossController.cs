@@ -40,6 +40,11 @@ public class BossController : EnemyBase
     [SerializeField] private float fallingProjectileSpawnInterval = 0.3f;
     [SerializeField] private float screamWindup = 0.8f;
 
+
+    [Header("Animation")]
+    [SerializeField] private Animator bossAnimator;
+    [SerializeField] private string fallingProjectilesTelegraphTrigger = "FallingProjectilesTelegraphTrigger";
+    [SerializeField] private string idleTrigger = "Idle";
     protected override void Awake()
     {
         base.Awake();
@@ -133,7 +138,7 @@ public class BossController : EnemyBase
     private void SpawnGroundWave(float direction)
     {
         GameObject wave = Instantiate(groundWavePrefab, groundWaveSpawnPoint.position, Quaternion.identity);
-        Rigidbody2D rb = wave.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = wave.GetComponentInChildren<Rigidbody2D>();
         rb.linearVelocity = new Vector2(groundWaveSpeed * direction, 0f);
 
         Vector3 scale = wave.transform.localScale;
@@ -143,16 +148,17 @@ public class BossController : EnemyBase
         Collider2D[] collidersToIgnore = GetComponentsInChildren<Collider2D>();
 
 
-        GroundMovingHazard hazard = wave.GetComponent<GroundMovingHazard>();
+        GroundMovingHazard hazard = wave.GetComponentInChildren<GroundMovingHazard>();
         hazard.IgnoreColliders(collidersToIgnore);
 
-        AttackHitbox hitbox = wave.GetComponent<AttackHitbox>();
+        AttackHitbox hitbox = wave.GetComponentInChildren<AttackHitbox>();
         hitbox.IgnoreColliders(collidersToIgnore);
 
     }
 
     private IEnumerator FallingProjectilesRoutine()
     {
+        bossAnimator.SetTrigger(fallingProjectilesTelegraphTrigger);
         yield return new WaitForSeconds(screamWindup);
 
         for (int i = 0; i < fallingProjectileCount; i++)
@@ -164,6 +170,8 @@ public class BossController : EnemyBase
 
             yield return new WaitForSeconds(fallingProjectileSpawnInterval);
         }
+
+        bossAnimator.SetTrigger(idleTrigger);
     }
 
     private float GetRandomFallingProjectileSpawnX()

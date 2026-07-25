@@ -252,7 +252,7 @@ public class MainPlayerControl : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Vector2 origin = (Vector2)transform.position + groundCheckOffset;
-        Gizmos.color = isGrounded ? Color.cyan : Color.red;
+        Gizmos.color = isGrounded ? Color.cyan : Color.yellow;
         Gizmos.DrawLine(origin, origin + Vector2.down * groundCheckDistance);
     }
 }

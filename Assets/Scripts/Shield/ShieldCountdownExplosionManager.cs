@@ -63,12 +63,12 @@ public class ShieldCountdownExplosionManager : MonoBehaviour
 
     private void Explode()
     {
-        Debug.Log("KABOOoOoOoOoOoOoOoOM");
+        
         Vector2 explosionPosition = shieldManager.IsShieldHeld ? playerTransform.position : shieldObject.transform.position;
 
         //VFX
-       //explosionParticles.transform.position = explosionPosition;
-       //explosionParticles.Play();
+       explosionParticles.transform.position = explosionPosition;
+       explosionParticles.Play();
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(explosionPosition, explosionRadius);
 

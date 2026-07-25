@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: 9b2b7c612e3794f4ab694d893cffabef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4171883997090832739
+    second: big boss_irritado_d_0
+  - first:
+      213: 7629642308418264076
+    second: big boss_irritado_d_1
+  - first:
+      213: -2142122796170517185
+    second: big boss_irritado_d_2
+  - first:
+      213: 8269962581705154270
+    second: big boss_irritado_d_3
+  - first:
+      213: -5637540304477107193
+    second: big boss_irritado_d_4
+  - first:
+      213: 3993147999384773344
+    second: big boss_irritado_d_5
+  - first:
+      213: -5852433009927054505
+    second: big boss_irritado_d_6
+  - first:
+      213: 4473150600032483447
+    second: big boss_irritado_d_7
+  - first:
+      213: -4581748126943899217
+    second: big boss_irritado_d_8
+  - first:
+      213: 5055985724262103514
+    second: big boss_irritado_d_9
+  - first:
+      213: 7501932907914780321
+    second: big boss_irritado_d_10
+  - first:
+      213: 4414405831086446081
+    second: big boss_irritado_d_11
+  - first:
+      213: -5980083990758202461
+    second: big boss_irritado_d_12
+  - first:
+      213: -940420033867145143
+    second: big boss_irritado_d_13
+  - first:
+      213: 8952122511700529358
+    second: big boss_irritado_d_14
+  - first:
+      213: 2969619305046123907
+    second: big boss_irritado_d_15
+  - first:
+      213: 3036129119935547027
+    second: big boss_irritado_d_16
+  - first:
+      213: 7302395530461597876
+    second: big boss_irritado_d_17
+  - first:
+      213: 8049182192815310507
+    second: big boss_irritado_d_18
+  - first:
+      213: 6342234370140819378
+    second: big boss_irritado_d_19
+  - first:
+      213: 1462759102714908185
+    second: big boss_irritado_d_20
+  - first:
+      213: -6890323686112733564
+    second: big boss_irritado_d_21
+  - first:
+      213: -8799584937516255605
+    second: big boss_irritado_d_22
+  - first:
+      213: -4170289553279185192
+    second: big boss_irritado_d_23
+  - first:
+      213: 6767238903620265351
+    second: big boss_irritado_d_24
+  - first:
+      213: 3667286065492354967
+    second: big boss_irritado_d_25
+  - first:
+      213: 1953216563203983470
+    second: big boss_irritado_d_26
+  - first:
+      213: -7582899913365079788
+    second: big boss_irritado_d_27
+  - first:
+      213: -5735207815608281893
+    second: big boss_irritado_d_28
+  - first:
+      213: 6398930218154349009
+    second: big boss_irritado_d_29
+  - first:
+      213: -4758739541840539215
+    second: big boss_irritado_d_30
+  - first:
+      213: 8369204700622385544
+    second: big boss_irritado_d_31
+  - first:
+      213: 7460889704704009068
+    second: big boss_irritado_d_32
+  - first:
+      213: -7435739606817442603
+    second: big boss_irritado_d_33
+  - first:
+      213: 4766262313138441918
+    second: big boss_irritado_d_34
+  - first:
+      213: 3479015891062296531
+    second: big boss_irritado_d_35
+  - first:
+      213: -4216528557783568969
+    second: big boss_irritado_d_36
+  - first:
+      213: 6256268508312656309
+    second: big boss_irritado_d_37
+  - first:
+      213: -8299366704153283478
+    second: big boss_irritado_d_38
+  - first:
+      213: -6241248261383997897
+    second: big boss_irritado_d_39
+  - first:
+      213: -7121053858005732181
+    second: big boss_irritado_d_40
+  - first:
+      213: -2342106926912741813
+    second: big boss_irritado_d_41
+  - first:
+      213: -4280886359485775892
+    second: big boss_irritado_d_42
+  - first:
+      213: 6141115331048899561
+    second: big boss_irritado_d_43
+  - first:
+      213: -6450714687133246346
+    second: big boss_irritado_d_44
+  - first:
+      213: -8837732790910137553
+    second: big boss_irritado_d_45
+  - first:
+      213: 7787410729234221389
+    second: big boss_irritado_d_46
+  - first:
+      213: 1537337526042597811
+    second: big boss_irritado_d_47
+  - first:
+      213: 241021065282017264
+    second: big boss_irritado_d_48
+  - first:
+      213: 655462382427109586
+    second: big boss_irritado_d_49
+  - first:
+      213: -1247539690215020383
+    second: big boss_irritado_d_50
+  - first:
+      213: -1729899941022374317
+    second: big boss_irritado_d_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4096
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004abc7918b3e424889f2a60d6afa589
+      internalID: 1812152876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_1
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4096
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4525cdf1329e4334ebf7deede5446be8
+      internalID: 1399234207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_2
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4096
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d76bbf4eb0a2147a55e11f1e75a2d3
+      internalID: 1847808750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4517c9b12664d3f45a57ea9ed7dacec3
+      internalID: 1139489586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fcf1a6cdc453342b58211efd659c19
+      internalID: 1537351463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_5
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2048
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fba825cdb18a844b76f71304e100c7
+      internalID: -290890392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998df9115e1cd7842b7b462f59ce0f03
+      internalID: 1355959807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_7
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e38fb7f16ce0074fb8842f5130a7481
+      internalID: 938685137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_FallingProjectileAniamtionSpreadsheet_8
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527240175c747ed43878015d0d04ee40
+      internalID: -11913285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5a426b05ad6afb54c99968ec018c549d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":2048.0,"y":2048.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Boss_FallingProjectileAniamtionSpreadsheet_0: 1812152876
+      Boss_FallingProjectileAniamtionSpreadsheet_1: 1399234207
+      Boss_FallingProjectileAniamtionSpreadsheet_2: 1847808750
+      Boss_FallingProjectileAniamtionSpreadsheet_3: 1139489586
+      Boss_FallingProjectileAniamtionSpreadsheet_4: 1537351463
+      Boss_FallingProjectileAniamtionSpreadsheet_5: -290890392
+      Boss_FallingProjectileAniamtionSpreadsheet_6: 1355959807
+      Boss_FallingProjectileAniamtionSpreadsheet_7: 938685137
+      Boss_FallingProjectileAniamtionSpreadsheet_8: -11913285
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
