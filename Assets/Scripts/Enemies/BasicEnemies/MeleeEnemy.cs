@@ -18,6 +18,9 @@ public class MeleeEnemy : EnemyBase
     [SerializeField] private float wallCheckDistance = 0.2f;
     [SerializeField] private LayerMask wallLayer;
 
+    [Header("Animation")]
+    [SerializeField] private Animator enemyAnimator;
+
     private Rigidbody2D rb;
     private MeleeAttackBehaviour attackBehaviour;
     private MovementState currentState = MovementState.Wander;
@@ -34,6 +37,7 @@ public class MeleeEnemy : EnemyBase
 
         rb = GetComponent<Rigidbody2D>();
         attackBehaviour = GetComponent<MeleeAttackBehaviour>();
+        attackBehaviour.OnWindupStart.AddListener(HandleAttackWindupStart);
 
         AttackHitbox hitbox = GetComponentInChildren<AttackHitbox>();
         hitbox.IgnoreColliders(GetComponentsInChildren<Collider2D>());
@@ -55,6 +59,11 @@ public class MeleeEnemy : EnemyBase
         wanderingBehaviour.enabled = true;
     }
 
+    private void HandleAttackWindupStart()
+    {
+        enemyAnimator.SetTrigger("AttackStarted");
+    }
+
     private void Update()
     {
 
@@ -71,7 +80,18 @@ public class MeleeEnemy : EnemyBase
 
     private void FixedUpdate()
     {
-        if (currentState != MovementState.Chase) return;
+        if (currentState != MovementState.Chase)
+        {
+            UpdateWalkAnimation();
+            return;
+        }
+
+        if (attackBehaviour.IsAttacking)
+        {
+            rb.linearVelocityX = 0f;
+            UpdateWalkAnimation();
+            return;
+        }
 
         float direction = Mathf.Sign(player.position.x - transform.position.x);
 
@@ -83,6 +103,13 @@ public class MeleeEnemy : EnemyBase
 
         rb.linearVelocityX = chaseSpeed * direction;
         FaceDirection(direction);
+
+        UpdateWalkAnimation();
+    }
+
+    private void UpdateWalkAnimation()
+    {
+        enemyAnimator.SetBool("IsMoving", Mathf.Abs(rb.linearVelocityX) > 0.01f);
     }
 
     private bool IsWallAhead(float direction)

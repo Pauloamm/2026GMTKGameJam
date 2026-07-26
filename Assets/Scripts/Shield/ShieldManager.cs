@@ -37,6 +37,11 @@ public class ShieldManager : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private Animator playerAnimator;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip throwSound;
+    [SerializeField] private float throwSoundStartTime = 0.1f;
+
     //SOURCE OF TRUTH FOR SHIELD HELD
     public bool IsShieldHeld { get; private set; } = true;
     void Awake()
@@ -65,15 +70,27 @@ public class ShieldManager : MonoBehaviour
 
     void ThrowShield(InputAction.CallbackContext context)
     {
+        if (!IsShieldHeld) return;
+
         canThrowShieldNextFrame = true;
         SetShieldThrowDirection();
         IsShieldHeld = false;
         playerAnimator.SetTrigger("ShieldThrown");
+        PlayThrowSoundFromOffset();
         OnShieldThrown?.Invoke();
+    }
+
+    private void PlayThrowSoundFromOffset()
+    {
+        audioSource.clip = throwSound;
+        audioSource.time = throwSoundStartTime;
+        audioSource.Play();
     }
 
     void RecallShield(InputAction.CallbackContext context)
     {
+        if (IsShieldHeld) return;
+
         canRecallShieldNextFrame = true;
         SetShieldRecalDirection();
     }
@@ -110,7 +127,7 @@ public class ShieldManager : MonoBehaviour
 
         shieldDirectionToMove.x = playerTransformForParenting.localScale.x;// change only left right
 
-        Debug.Log($"Facing scale.x = {playerTransformForParenting.localScale.x}, throw direction = {shieldDirectionToMove.x}");
+        //Debug.Log($"Facing scale.x = {playerTransformForParenting.localScale.x}, throw direction = {shieldDirectionToMove.x}");
 
     }
 
@@ -156,7 +173,7 @@ public class ShieldManager : MonoBehaviour
 
     void InvertShieldDirectionForRicochet()
     {
-        Debug.Log("Shield ricochet triggered, inverting direction");
+        //Debug.Log("Shield ricochet triggered, inverting direction");
         shieldDirectionToMove = -shieldDirectionToMove;
     }
 }

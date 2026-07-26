@@ -76,17 +76,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "down",
-                    "id": "c1695755-c7d5-4fcf-aabc-88a31d9a923c",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "HorizontalMovement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "left",
                     "id": "0395dfc8-fb55-43e3-b380-8f2a9a7e1331",
                     "path": "<Keyboard>/a",

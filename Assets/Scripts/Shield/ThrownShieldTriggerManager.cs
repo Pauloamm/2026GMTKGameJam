@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class ThrownShieldTriggerManager : MonoBehaviour
 {
+    [SerializeField] private LayerMask layersToIgnore;
+
     public UnityEvent OnShieldRicochet;
     public UnityEvent OnShieldCloseToPlayerWhileRecalling;
 
@@ -15,14 +17,13 @@ public class ThrownShieldTriggerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"Shield trigger entered by: {other.gameObject.name} (tag: {other.tag}, layer: {LayerMask.LayerToName(other.gameObject.layer)})");
+        if ((layersToIgnore.value & (1 << other.gameObject.layer)) != 0) return;
 
         if (other.CompareTag("Player"))
         {
             if (isRecalling)
             {
-                isRecalling = false;
-                OnShieldCloseToPlayerWhileRecalling?.Invoke();
+                CatchShield();
             }
 
             return;
@@ -32,5 +33,19 @@ public class ThrownShieldTriggerManager : MonoBehaviour
             damageable.TakeDamage(1);
 
         OnShieldRicochet?.Invoke();
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (isRecalling && other.CompareTag("Player"))
+        {
+            CatchShield();
+        }
+    }
+
+    private void CatchShield()
+    {
+        isRecalling = false;
+        OnShieldCloseToPlayerWhileRecalling?.Invoke();
     }
 }

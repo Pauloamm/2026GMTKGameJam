@@ -86,13 +86,13 @@ public class ShieldCountdownExplosionManager : MonoBehaviour
         currentCountdown = explosionCountdownDuration;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Vector2 origin = shieldManager.IsShieldHeld && playerTransform != null
-            ? playerTransform.position
-            : (shieldObject != null ? (Vector2)shieldObject.transform.position : Vector2.zero);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(origin, explosionRadius);
-    }
+   //private void OnDrawGizmosSelected()
+   //{
+   //    Vector2 origin = shieldManager.IsShieldHeld && playerTransform != null
+   //        ? playerTransform.position
+   //        : (shieldObject != null ? (Vector2)shieldObject.transform.position : Vector2.zero);
+   //
+   //    Gizmos.color = Color.red;
+   //    Gizmos.DrawWireSphere(origin, explosionRadius);
+   //}
 }

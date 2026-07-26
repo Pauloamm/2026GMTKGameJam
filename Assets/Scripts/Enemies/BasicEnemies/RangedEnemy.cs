@@ -7,6 +7,9 @@ public class RangedEnemy : EnemyBase
     [SerializeField] private float fireCooldown = 2f;
     private float cooldownTimer;
 
+    [Header("Animation")]
+    [SerializeField] private Animator enemyAnimator;
+
     private IProjectileLauncher launcher;
     private Transform player;
 
@@ -24,15 +27,11 @@ public class RangedEnemy : EnemyBase
 
     public void HandlePlayerEnterRange(Transform playerTransform)
     {
-        Debug.Log("PLAYER ENTROU PDOE DISPARAR");
-
         player = playerTransform;
     }
 
     public void HandlePlayerExitRange()
     {
-        Debug.Log("PLAYER ENTROU PDOE DISPARAR");
-
         player = null;
     }
 
@@ -43,20 +42,12 @@ public class RangedEnemy : EnemyBase
 
         if (player == null) return;
 
-
-
         if (cooldownTimer <= 0f)
         {
-            Debug.Log("DISPAROU");
+            enemyAnimator.SetTrigger("AttackStarted");
             launcher.Fire(player.position);
             cooldownTimer = fireCooldown;
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        //Gizmos.color = Color.black;
-        //Gizmos.DrawLine(transform.position,new Vector3(transform.position.x + firingRange, transform.position.y, transform.position.z));
     }
 
 }

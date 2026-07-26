@@ -33,7 +33,8 @@ public class Projectile : MonoBehaviour
     {
         if (rotateToFaceDirection && rb.linearVelocity != Vector2.zero)
         {
-            transform.up = rb.linearVelocity.normalized;
+            float angle = Mathf.Atan2(rb.linearVelocity.y, rb.linearVelocity.x) * Mathf.Rad2Deg + 180f;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
