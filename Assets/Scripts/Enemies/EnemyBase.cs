@@ -12,6 +12,10 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     [Header("Contact Damage")]
     [SerializeField] protected int contactDamage = 1;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hitSound;
+
 
     public event Action<EnemyBase> OnDeath;
 
@@ -27,6 +31,11 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
         if (currentHealth <= 0) return;
 
         currentHealth -= damage;
+
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
 
         if (currentHealth <= 0)
         {

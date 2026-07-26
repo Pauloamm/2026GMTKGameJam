@@ -19,6 +19,10 @@ public class PlayerLifeManager : MonoBehaviour, IDamageable
     public event Action OnDeath;
     public UnityEvent<int> OnHealthChanged;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hitSound;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -28,10 +32,15 @@ public class PlayerLifeManager : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        if (isInvincible) return;// || currentHealth <= 0) return;
+        if (isInvincible || currentHealth <= 0) return;
 
         currentHealth -= damage;
         OnHealthChanged?.Invoke(currentHealth);
+
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
 
         if (currentHealth <= 0)
         {

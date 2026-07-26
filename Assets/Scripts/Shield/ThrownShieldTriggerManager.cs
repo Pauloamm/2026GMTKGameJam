@@ -10,6 +10,9 @@ public class ThrownShieldTriggerManager : MonoBehaviour
 
     private bool isRecalling;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip ricochetSound;
     public void SetRecalling(bool recalling)
     {
         isRecalling = recalling;
@@ -30,7 +33,13 @@ public class ThrownShieldTriggerManager : MonoBehaviour
         }
 
         if (other.TryGetComponent<IDamageable>(out IDamageable damageable))
+        {
             damageable.TakeDamage(1);
+        }
+        else if (audioSource != null && ricochetSound != null)
+        {
+            audioSource.PlayOneShot(ricochetSound);
+        }
 
         OnShieldRicochet?.Invoke();
     }

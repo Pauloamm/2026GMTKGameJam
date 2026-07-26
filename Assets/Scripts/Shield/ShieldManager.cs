@@ -173,7 +173,7 @@ public class ShieldManager : MonoBehaviour
 
     void InvertShieldDirectionForRicochet()
     {
-        //Debug.Log("Shield ricochet triggered, inverting direction");
+        Debug.Log("Shield ricochet triggered, inverting direction");
         shieldDirectionToMove = -shieldDirectionToMove;
     }
 }

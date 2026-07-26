@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BossController : EnemyBase
 {
@@ -45,6 +46,11 @@ public class BossController : EnemyBase
     [SerializeField] private Animator bossAnimator;
     [SerializeField] private string fallingProjectilesTelegraphTrigger = "FallingProjectilesTelegraphTrigger";
     [SerializeField] private string idleTrigger = "Idle";
+
+
+    public UnityEvent OnBossEngaged;
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -62,6 +68,7 @@ public class BossController : EnemyBase
 
         hasEngaged = true;
         player = playerTransform;
+        OnBossEngaged?.Invoke();
         StartCoroutine(BossAttackLoop());
     }
 
