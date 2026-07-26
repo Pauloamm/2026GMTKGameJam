@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,6 +18,9 @@ public class MainMenuManager : MonoBehaviour
     [Header("Scene To Load")]
     [SerializeField] private string gameSceneName;
 
+    [Header("Click Feedback Delay")]
+    [SerializeField] private float startButtonClickDelay = 0.4f;
+
     private void Awake()
     {
         startButton.onClick.AddListener(OnStartPressed);
@@ -29,22 +33,51 @@ public class MainMenuManager : MonoBehaviour
 
     private void OnStartPressed()
     {
-        SceneManager.LoadScene(gameSceneName);
+        StartCoroutine(LoadGameSceneAfterDelay());
+    }
+
+    private IEnumerator LoadGameSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(startButtonClickDelay);
+
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(gameSceneName);
     }
 
     private void OnControlsPressed()
     {
+        StartCoroutine(OpenControlsMenuAfterDelay());
+
+    }
+
+    private IEnumerator OpenControlsMenuAfterDelay()
+    {
+        yield return new WaitForSeconds(startButtonClickDelay);
+
         mainMenuPanel.SetActive(false);
         controlsPanel.SetActive(true);
     }
-
     private void OnBackFromControlsPressed()
     {
-        ShowMainMenu();
+        StartCoroutine(CloseControlsMenuAfterDelay());
+
     }
 
+    private IEnumerator CloseControlsMenuAfterDelay()
+    {
+        yield return new WaitForSeconds(startButtonClickDelay);
+        ShowMainMenu();
+
+    }
     private void OnQuitPressed()
     {
+        StartCoroutine(QuitGameAfterDelay());
+
+    }
+
+    private IEnumerator QuitGameAfterDelay()
+    {
+        yield return new WaitForSeconds(startButtonClickDelay);
+
         Debug.Log("Quitting game");
         Application.Quit();
 
