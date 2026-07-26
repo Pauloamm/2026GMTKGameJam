@@ -495,9 +495,9 @@ MonoBehaviour:
   waveWindup: 0.6
   fallingProjectilePrefab: {fileID: 7519017303692859142, guid: 96df6bc7a47fd0846aa34f572000b40b, type: 3}
   fallingProjectileSpawnHeight: 8
-  fallingProjectileSpawnRangeX: 6
-  fallingProjectileExclusionRadius: 1.5
-  fallingProjectileCount: 12
+  fallingProjectileSpawnRangeX: 20
+  fallingProjectileExclusionRadius: 5
+  fallingProjectileCount: 15
   fallingProjectileSpawnInterval: 0.5
   screamWindup: 0.8
   bossAnimator: {fileID: 1563303695535594203}
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArcLaunchProjectileBehaviour
   projectilePrefab: {fileID: 6530174728366701933, guid: 53db7604df744064ba33c1859adf4bbf, type: 3}
   firePoint: {fileID: 7999659234878058378}
-  flightTime: 1
+  flightTime: 1.2
 --- !u!50 &7633861821273635412
 Rigidbody2D:
   serializedVersion: 5
@@ -556,7 +556,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9089324024875237162}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -695,15 +695,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -855298285791758126, guid: ada6acbd05d960647ba442561e3b6cbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.82, y: 6.82}
+  m_Size: {x: 9.17, y: 9.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
 --- !u!95 &5764273168929616799

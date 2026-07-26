@@ -7,7 +7,6 @@ public class ShieldCountdownExplosionManager : MonoBehaviour
     [SerializeField] private GameObject shieldObject;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private ShieldManager shieldManager;
-    [SerializeField] private ThrownShieldCollidersManager thrownShieldCollidersManager;
 
     [Header("Timer")]
     [SerializeField] private float explosionCountdownDuration = 3.5f;
@@ -45,10 +44,6 @@ public class ShieldCountdownExplosionManager : MonoBehaviour
         currentCountdown -= Time.deltaTime;
         OnCountdownTick?.Invoke(currentCountdown);
 
-        if (currentCountdown <= 0f)
-        {
-            Explode();
-        }
         if (currentCountdown <= 0f)
         {
             Explode();

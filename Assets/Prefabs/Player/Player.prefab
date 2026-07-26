@@ -90,12 +90,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -855298285791758126, guid: 03cd5580ef3d66849bdfe218d1816aa0, type: 3}
+  m_Sprite: {fileID: 1242989556482038843, guid: 18f045542c7fc5241b98996737868772, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6, y: 2.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -239,7 +239,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.6, y: 2.82}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.6, y: 2.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -302,7 +302,8 @@ MonoBehaviour:
   shieldRecallAction: {fileID: -3934392012321629470, guid: 1267f7d15d0e8554aab44e4ccdc68fad, type: 3}
   playerTransformForParenting: {fileID: 972013584862974295}
   relativeParentPositionOffset: {x: 0.23, y: 0}
-  shieldThrowVelocity: 6
+  shieldThrowVelocity: 10
+  playerAnimator: {fileID: 4640485743317836989}
 --- !u!114 &8207574798318652705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +319,6 @@ MonoBehaviour:
   shieldObject: {fileID: 8010821876629713739}
   playerTransform: {fileID: 972013584862974295}
   shieldManager: {fileID: 7889577185327008332}
-  thrownShieldCollidersManager: {fileID: 2887883512391643634}
   explosionCountdownDuration: 3.5
   baseExplosionDamage: 1
   currentExplosionDamage: 1
@@ -5272,6 +5272,7 @@ MonoBehaviour:
   parryActionRef: {fileID: 589594220447492987, guid: 1267f7d15d0e8554aab44e4ccdc68fad, type: 3}
   parryWindowDuration: 0.2
   parryRecoveryDuration: 0.4
+  playerAnimator: {fileID: 4640485743317836989}
 --- !u!1 &8010821876629713739
 GameObject:
   m_ObjectHideFlags: 0
@@ -5281,12 +5282,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 970076065060733400}
-  - component: {fileID: 1292531392839056489}
-  - component: {fileID: 2301078444720076772}
-  - component: {fileID: 2887883512391643634}
-  - component: {fileID: 858757316630242797}
-  - component: {fileID: 6446570811201888297}
-  - component: {fileID: 6920397963342375414}
+  - component: {fileID: 1762187823692296002}
+  - component: {fileID: 7287553440616466209}
+  - component: {fileID: 123201977337431104}
+  - component: {fileID: 6861284348181896906}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -5309,7 +5308,88 @@ Transform:
   m_Children: []
   m_Father: {fileID: 972013584862974295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1292531392839056489
+--- !u!114 &1762187823692296002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010821876629713739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa6642c9bce7fa42b1dbb5ddafe168d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThrownShieldTriggerManager
+  OnShieldRicochet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShieldCloseToPlayerWhileRecalling:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!50 &7287553440616466209
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010821876629713739}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &123201977337431104
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010821876629713739}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!212 &6861284348181896906
 SpriteRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -5369,136 +5449,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!50 &2301078444720076772
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8010821876629713739}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &2887883512391643634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8010821876629713739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa504eb9ebd51bd4a846e0f064776a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThrownShieldCollisionManager
-  shieldManager: {fileID: 7889577185327008332}
-  shieldCollider: {fileID: 858757316630242797}
-  shieldTrigger: {fileID: 6446570811201888297}
-  OnShieldCloseToPlayerWhileRecalling:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!58 &858757316630242797
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8010821876629713739}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!58 &6446570811201888297
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8010821876629713739}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &6920397963342375414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8010821876629713739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57fcf94f0d099cf4fb1b1fb3abdd24ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThrownShieldRicochetBehaviour
-  shieldColliderForRicochet: {fileID: 858757316630242797}
-  OnShieldRicochet:
-    m_PersistentCalls:
-      m_Calls: []

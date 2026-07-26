@@ -125,18 +125,27 @@ public class MainPlayerControl : MonoBehaviour
 
 
         //Horizontal Movement
-        if (moveInput != Vector2.zero) {
+        if (moveInput != Vector2.zero)
+        {
 
             playerRigidbody.linearVelocityX = (moveInput.x * horizontalDirectionalForce);
             playerHorizontalOrientation.x = moveInput.x;
             this.transform.localScale = playerHorizontalOrientation;
+            playerAnimator.SetBool("IsMoving", true);
 
 
-        } 
-        else ResetPlayerHorizontalLinearVelocity();
+        }
+        else {
+
+
+            ResetPlayerHorizontalLinearVelocity();
+            playerAnimator.SetBool("IsMoving", false);
+
+        }
 
         //Jump check
         isGrounded = CheckIsGrounded();
+        playerAnimator.SetBool("IsGrounded", isGrounded);
         if (isGrounded && this.currentJumpState != JumpState.Grounded)
         {
             currentJumpState = JumpState.Grounded;

@@ -26,6 +26,8 @@ public class PlayerParrySystem : MonoBehaviour
 
     public bool IsParryWindowActive => currentState == ParryState.Parrying;
 
+    [Header("Animation")]
+    [SerializeField] private Animator playerAnimator;
     private void Awake()
     {
         parryActionRef.action.started += OnParryActionTriggered;
@@ -62,16 +64,15 @@ public class PlayerParrySystem : MonoBehaviour
     private IEnumerator ParryRoutine()
     {
         currentState = ParryState.Parrying;
-        Debug.Log("Parry state: Parrying (window active)");
+        playerAnimator.SetTrigger("ParryStarted");
 
         yield return new WaitForSeconds(parryWindowDuration);
 
         currentState = ParryState.Recovery;
-        Debug.Log("Parry state: Recovery");
+        // TODO: trigger recovery animation here
 
         yield return new WaitForSeconds(parryRecoveryDuration);
 
         currentState = ParryState.Idle;
-        Debug.Log("Parry state: Idle (ready)");
     }
 }

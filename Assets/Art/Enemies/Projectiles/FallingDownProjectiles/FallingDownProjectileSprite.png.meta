@@ -3,8 +3,8 @@ guid: 6b7e029d71d561e43a647c05693d9c1b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3365502607752809554
-    second: cadeira_2_0
+      213: -2914450113257775191
+    second: FallingDownProjectileSprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cadeira_2_0
+      name: FallingDownProjectileSprite_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
-        width: 16
-        height: 20
+        x: 255
+        y: 255
+        width: 450
+        height: 578
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea33e3e95355b41d0800000000000000
-      internalID: -3365502607752809554
+      spriteID: 9af5cab301bcd87d0800000000000000
+      internalID: -2914450113257775191
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cadeira_2_0: -3365502607752809554
+      FallingDownProjectileSprite_0: -2914450113257775191
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
