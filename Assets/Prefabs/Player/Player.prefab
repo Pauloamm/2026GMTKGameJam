@@ -5562,6 +5562,7 @@ MonoBehaviour:
   gameplayInputMapRef: {fileID: -944628639613478452, guid: 1267f7d15d0e8554aab44e4ccdc68fad, type: 3}
   moveActionRef: {fileID: -1820558941090507856, guid: 1267f7d15d0e8554aab44e4ccdc68fad, type: 3}
   jumpActionRef: {fileID: -7712027989028685365, guid: 1267f7d15d0e8554aab44e4ccdc68fad, type: 3}
+  parryActionRef: {fileID: 589594220447492987, guid: 1267f7d15d0e8554aab44e4ccdc68fad, type: 3}
 --- !u!1 &5108505771905696610
 GameObject:
   m_ObjectHideFlags: 0
@@ -5653,11 +5654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0337fcaea7ac41944a9de7ffa7e098f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerParrySystem
+  inputReader: {fileID: 9077009917780330083}
   shieldManager: {fileID: 7889577185327008332}
-  parryActionRef: {fileID: 589594220447492987, guid: 1267f7d15d0e8554aab44e4ccdc68fad, type: 3}
   parryWindowDuration: 0.2
   parryRecoveryDuration: 0.4
-  playerAnimator: {fileID: 4640485743317836989}
 --- !u!1 &7295846095480676648
 GameObject:
   m_ObjectHideFlags: 0
@@ -6039,6 +6039,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 4640485743317836989}
   playerMovement: {fileID: 8005307847818235559}
   playerJumpController: {fileID: 5724921763466846225}
+  playerParrySystem: {fileID: 1228144236691772652}
 --- !u!1001 &4016053923051879137
 PrefabInstance:
   m_ObjectHideFlags: 0

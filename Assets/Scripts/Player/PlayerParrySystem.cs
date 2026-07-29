@@ -1,12 +1,9 @@
+using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerParrySystem : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private ShieldManager shieldManager;
     private enum ParryState
     {
         Idle,
@@ -14,26 +11,28 @@ public class PlayerParrySystem : MonoBehaviour
         Recovery
     }
 
-    [Header("Input")]
-    [SerializeField] private InputActionReference parryActionRef;
-    private bool hasParryBeenPressedThisFrame;
+    [Header("References")]
+    [SerializeField] private PlayerInputReader inputReader;
+    [SerializeField] private ShieldManager shieldManager;
 
     [Header("Timing (seconds)")]
     [SerializeField] private float parryWindowDuration = 0.2f;
     [SerializeField] private float parryRecoveryDuration = 0.4f;
 
+    private bool hasParryBeenPressedThisFrame;
     private ParryState currentState = ParryState.Idle;
 
     public bool IsParryWindowActive => currentState == ParryState.Parrying;
 
-    [Header("Animation")]
-    [SerializeField] private Animator playerAnimator;
+    public event Action OnParryStarted;
+    public event Action OnParryRecoveryStarted;
+
     private void Awake()
     {
-        parryActionRef.action.started += OnParryActionTriggered;
+        inputReader.ParryPressed += OnParryPressed;
     }
 
-    private void OnParryActionTriggered(InputAction.CallbackContext context)
+    private void OnParryPressed()
     {
         Debug.Log(shieldManager.IsShieldHeld);
         if (!shieldManager.IsShieldHeld)
@@ -64,12 +63,12 @@ public class PlayerParrySystem : MonoBehaviour
     private IEnumerator ParryRoutine()
     {
         currentState = ParryState.Parrying;
-        playerAnimator.SetTrigger("ParryStarted");
+        OnParryStarted?.Invoke();
 
         yield return new WaitForSeconds(parryWindowDuration);
 
         currentState = ParryState.Recovery;
-        // TODO: trigger recovery animation here
+        OnParryRecoveryStarted?.Invoke();
 
         yield return new WaitForSeconds(parryRecoveryDuration);
 

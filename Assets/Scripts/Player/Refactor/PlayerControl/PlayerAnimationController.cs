@@ -6,6 +6,8 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerJumpController playerJumpController;
+    [SerializeField] private PlayerParrySystem playerParrySystem;
+
 
 
     // Hashes for faster lookup since the string never changes(easir to comapre int to int than converting it everytime, small polish)
@@ -13,6 +15,7 @@ public class PlayerAnimationController : MonoBehaviour
     private readonly int isGroundedHash = Animator.StringToHash("IsGrounded");
     private readonly int jumpStartedHash = Animator.StringToHash("JumpStarted");
     private readonly int jumpFinishedHash = Animator.StringToHash("JumpFinished");
+    private readonly int parryStartedHash = Animator.StringToHash("ParryStarted");
 
     private void Awake()
     {
@@ -20,6 +23,8 @@ public class PlayerAnimationController : MonoBehaviour
         playerJumpController.OnGroundedStateChanged += HandleGroundedStateChanged;
         playerJumpController.OnJumpStarted += HandleJumpStarted;
         playerJumpController.OnJumpFinished += HandleJumpFinished;
+        playerParrySystem.OnParryStarted += HandleParryStarted;
+
     }
 
     private void HandleMovementStateChanged(bool isMoving)
@@ -42,5 +47,9 @@ public class PlayerAnimationController : MonoBehaviour
     {
         playerAnimator.ResetTrigger(jumpStartedHash);
         playerAnimator.SetTrigger(jumpFinishedHash);
+    }
+    private void HandleParryStarted()
+    {
+        playerAnimator.SetTrigger(parryStartedHash);
     }
 }

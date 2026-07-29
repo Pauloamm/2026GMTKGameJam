@@ -9,6 +9,9 @@ public class PlayerInputReader : MonoBehaviour
     [SerializeField] private InputActionAsset gameplayInputMapRef;
     [SerializeField] private InputActionReference moveActionRef;
     [SerializeField] private InputActionReference jumpActionRef;
+    [SerializeField] private InputActionReference parryActionRef;
+
+    
 
     private Vector2 moveInput;
     public Vector2 MoveInput => moveInput;
@@ -17,6 +20,7 @@ public class PlayerInputReader : MonoBehaviour
     public bool IsJumpHeld => isJumpHeld;
 
     public event Action JumpPressed;
+    public event Action ParryPressed;
 
     private void Awake()
     {
@@ -27,6 +31,8 @@ public class PlayerInputReader : MonoBehaviour
 
         jumpActionRef.action.started += OnJumpStarted;
         jumpActionRef.action.canceled += OnJumpCanceled;
+
+        parryActionRef.action.started += OnParryStarted;
     }
 
     private void OnMovePerformed(InputAction.CallbackContext ctx)
@@ -50,5 +56,10 @@ public class PlayerInputReader : MonoBehaviour
     private void OnJumpCanceled(InputAction.CallbackContext context)
     {
         isJumpHeld = false;
+    }
+
+    private void OnParryStarted(InputAction.CallbackContext context)
+    {
+        ParryPressed?.Invoke();
     }
 }
