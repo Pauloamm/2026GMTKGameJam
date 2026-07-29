@@ -1,6 +1,9 @@
-using UnityEngine;
+using System;
+using Unity.VisualScripting;
+
 
 public interface IDamageable
 {
-    public void TakeDamage(int damage);
+    event Action OnDamaged;
+    void TakeDamage(int damage);
 }

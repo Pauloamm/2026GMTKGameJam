@@ -69,10 +69,10 @@ public class ShieldCountdownExplosionManager : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.TryGetComponent<IDamageable>(out IDamageable damageable))
-            {
-                damageable.TakeDamage(currentExplosionDamage);
-            }
+
+            IDamageable creature = hit.GetComponentInChildren<IDamageable>();
+            if (creature != null)
+                creature.TakeDamage(currentExplosionDamage);
         }
 
         OnShieldExplode?.Invoke();

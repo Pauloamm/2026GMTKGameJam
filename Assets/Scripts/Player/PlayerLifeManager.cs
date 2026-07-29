@@ -1,33 +1,22 @@
 using System;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PlayerLifeManager : MonoBehaviour, IDamageable
 {
     [Header("Health")]
     [SerializeField] private int maxHealth = 5;
-    [SerializeField] private int currentHealth;
-
-    [Header("Invincibility Frames")]
-    [SerializeField] private float invincibilityDuration = 1f;
-    [SerializeField] private float blinkInterval = 0.1f;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    private int currentHealth;
 
     private bool isInvincible;
 
     public event Action OnDeath;
-    public UnityEvent<int> OnHealthChanged;
-
-    [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip hitSound;
+    public event Action OnDamaged;
+    public event Action<int> OnHealthChanged;
 
     private void Awake()
     {
         currentHealth = maxHealth;
         OnHealthChanged?.Invoke(currentHealth);
-
     }
 
     public void TakeDamage(int damage)
@@ -36,11 +25,7 @@ public class PlayerLifeManager : MonoBehaviour, IDamageable
 
         currentHealth -= damage;
         OnHealthChanged?.Invoke(currentHealth);
-
-        if (audioSource != null && hitSound != null)
-        {
-            audioSource.PlayOneShot(hitSound);
-        }
+        OnDamaged?.Invoke();
 
         if (currentHealth <= 0)
         {
@@ -49,39 +34,28 @@ public class PlayerLifeManager : MonoBehaviour, IDamageable
             return;
         }
 
-        StartCoroutine(InvincibilityRoutine());
+        StartInvincibility();
     }
 
-    private IEnumerator InvincibilityRoutine()
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
+    }
+
+    private void StartInvincibility()
     {
         isInvincible = true;
-
-        float elapsed = 0f;
-        while (elapsed < invincibilityDuration)
-        {
-            spriteRenderer.enabled = !spriteRenderer.enabled;
-
-            yield return new WaitForSeconds(blinkInterval);
-            elapsed += blinkInterval;
-        }
-
-        spriteRenderer.enabled = true;
-
-        isInvincible = false;
     }
 
     private void Die()
     {
         OnDeath?.Invoke();
-
-        Destroy(this.gameObject);// destroy player for now, maybe animation or soemthing later
+        Destroy(gameObject);
     }
+
     public void ForceDeath()
     {
-        //if (currentHealth <= 0) return;
-
         currentHealth = 0;
         Die();
     }
-
 }

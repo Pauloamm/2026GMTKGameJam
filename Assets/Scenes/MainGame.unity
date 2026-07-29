@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51f00d96c51b144dbf35052b9f216eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHeartsUIManager
-  playerLifeManager: {fileID: 1138018034037401588}
+  playerLifeManager: {fileID: 428861385}
   heartImages:
   - {fileID: 203427622}
   - {fileID: 573954825}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c7a36fa75cade46b9951724243f2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeathUIManager
-  playerLifeManager: {fileID: 1138018034037401588}
+  playerLifeManager: {fileID: 428861385}
   deathScreenRoot: {fileID: 2048817621}
   messageText: {fileID: 672439103}
   countdownText: {fileID: 1982964198}
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTimeoutDeathTrigger
   levelTimerManager: {fileID: 1270096036}
-  playerLifeManager: {fileID: 1138018034037401588}
+  playerLifeManager: {fileID: 428861385}
 --- !u!1 &133601066
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2717617381839953159, guid: af7ace3fdb8312842b6ba8ebf7a9344e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1449,7 +1449,7 @@ MonoBehaviour:
   normalToBossFadeDuration: 1.5
   deathWinFadeDuration: 0.4
   boss: {fileID: 2074780686}
-  playerLifeManager: {fileID: 1138018034037401588}
+  playerLifeManager: {fileID: 0}
   maxVolume: 0.2
 --- !u!4 &379199516
 Transform:
@@ -1612,6 +1612,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5844165634053469394, guid: ffcb9a9748c28e04fa4fc396e37392ac, type: 3}
   m_PrefabInstance: {fileID: 1378911449}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &428861385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 743442727635351003, guid: 45e09d1b7dabc654fb487590bd1fbc24, type: 3}
+  m_PrefabInstance: {fileID: 1138018034037401587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777c6c46b664bec47842f2c34872ce44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLifeManager
 --- !u!1 &486552986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,7 +2222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2717617381839953159, guid: af7ace3fdb8312842b6ba8ebf7a9344e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4343,7 +4354,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2717617381839953159, guid: af7ace3fdb8312842b6ba8ebf7a9344e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8046,17 +8057,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45e09d1b7dabc654fb487590bd1fbc24, type: 3}
---- !u!114 &1138018034037401588 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1995180405669909531, guid: 45e09d1b7dabc654fb487590bd1fbc24, type: 3}
-  m_PrefabInstance: {fileID: 1138018034037401587}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777c6c46b664bec47842f2c34872ce44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerLifeManager
 --- !u!4 &1138018034037401590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 972013584862974295, guid: 45e09d1b7dabc654fb487590bd1fbc24, type: 3}

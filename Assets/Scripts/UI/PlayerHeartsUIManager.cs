@@ -15,7 +15,7 @@ public class PlayerHeartsUIManager : MonoBehaviour
 
     private void Awake()
     {
-        playerLifeManager.OnHealthChanged.AddListener(UpdateHearts);
+        playerLifeManager.OnHealthChanged += UpdateHearts;
     }
 
     private void UpdateHearts(int currentHealth)

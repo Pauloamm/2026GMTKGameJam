@@ -4,7 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public abstract class EnemyBase : MonoBehaviour, IDamageable
 {
-
     [Header("Health")]
     [SerializeField] protected int maxHealth = 3;
     protected int currentHealth;
@@ -12,18 +11,12 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     [Header("Contact Damage")]
     [SerializeField] protected int contactDamage = 1;
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip hitSound;
-
-
     public event Action<EnemyBase> OnDeath;
+    public event Action OnDamaged;
 
     protected virtual void Awake()
     {
         currentHealth = maxHealth;
-
-
     }
 
     public virtual void TakeDamage(int damage)
@@ -31,11 +24,7 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
         if (currentHealth <= 0) return;
 
         currentHealth -= damage;
-
-        if (audioSource != null && hitSound != null)
-        {
-            audioSource.PlayOneShot(hitSound);
-        }
+        OnDamaged?.Invoke();
 
         if (currentHealth <= 0)
         {
@@ -46,19 +35,18 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     protected virtual void Die()
     {
         OnDeath?.Invoke(this);
-        this.gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.TryGetComponent<IDamageable>(out IDamageable player) && other.gameObject.CompareTag("Player"))
-        {
-            
-            player.TakeDamage(contactDamage);
-        }
-    }
+        
 
+        IDamageable player = other.GetComponentInChildren<IDamageable>();
+        if (player != null)
+            player.TakeDamage(contactDamage);
+        
+    }
 
     protected void FaceDirection(float direction)
     {
