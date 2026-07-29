@@ -7,6 +7,7 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerJumpController playerJumpController;
     [SerializeField] private PlayerParrySystem playerParrySystem;
+    [SerializeField] private ShieldManager shieldManager;
 
 
 
@@ -16,6 +17,7 @@ public class PlayerAnimationController : MonoBehaviour
     private readonly int jumpStartedHash = Animator.StringToHash("JumpStarted");
     private readonly int jumpFinishedHash = Animator.StringToHash("JumpFinished");
     private readonly int parryStartedHash = Animator.StringToHash("ParryStarted");
+    private readonly int shieldThrownHash = Animator.StringToHash("ShieldThrown");
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class PlayerAnimationController : MonoBehaviour
         playerJumpController.OnJumpStarted += HandleJumpStarted;
         playerJumpController.OnJumpFinished += HandleJumpFinished;
         playerParrySystem.OnParryStarted += HandleParryStarted;
+        shieldManager.OnShieldThrown += HandleShieldThrown;
 
     }
 
@@ -51,5 +54,9 @@ public class PlayerAnimationController : MonoBehaviour
     private void HandleParryStarted()
     {
         playerAnimator.SetTrigger(parryStartedHash);
+    }
+    private void HandleShieldThrown()
+    {
+        playerAnimator.SetTrigger(shieldThrownHash);
     }
 }

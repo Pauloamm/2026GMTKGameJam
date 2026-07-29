@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c140b18c1678304b9d904f7a36a5677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageSoundEffectController
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 8893915917724289416}
   hitSound: {fileID: 0}
   damageableSource: {fileID: 0}
 --- !u!82 &8893915917724289416

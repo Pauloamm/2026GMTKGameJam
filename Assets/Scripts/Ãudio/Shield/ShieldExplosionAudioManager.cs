@@ -23,8 +23,8 @@ public class ShieldExplosionAudioManager : MonoBehaviour
     private void Awake()
     {
         audioSource.loop = true;
-        explosionManager.OnCountdownTick.AddListener(HandleCountdownTick);
-        explosionManager.OnShieldExplode.AddListener(HandleExplosion);
+        explosionManager.OnCountdownTick+=HandleCountdownTick;
+        explosionManager.OnShieldExplode+=HandleExplosion;
     }
 
     private void HandleCountdownTick(float remainingTime)

@@ -10,8 +10,9 @@ public class PlayerInputReader : MonoBehaviour
     [SerializeField] private InputActionReference moveActionRef;
     [SerializeField] private InputActionReference jumpActionRef;
     [SerializeField] private InputActionReference parryActionRef;
+    [SerializeField] private InputActionReference shieldThrowActionRef;
+    [SerializeField] private InputActionReference shieldRecallActionRef;
 
-    
 
     private Vector2 moveInput;
     public Vector2 MoveInput => moveInput;
@@ -21,6 +22,8 @@ public class PlayerInputReader : MonoBehaviour
 
     public event Action JumpPressed;
     public event Action ParryPressed;
+    public event Action ShieldThrowPressed;
+    public event Action ShieldRecallPressed;
 
     private void Awake()
     {
@@ -33,6 +36,11 @@ public class PlayerInputReader : MonoBehaviour
         jumpActionRef.action.canceled += OnJumpCanceled;
 
         parryActionRef.action.started += OnParryStarted;
+
+        shieldThrowActionRef.action.started += OnShieldThrowStarted;
+        shieldRecallActionRef.action.started += OnShieldRecallStarted;
+
+
     }
 
     private void OnMovePerformed(InputAction.CallbackContext ctx)
@@ -61,5 +69,14 @@ public class PlayerInputReader : MonoBehaviour
     private void OnParryStarted(InputAction.CallbackContext context)
     {
         ParryPressed?.Invoke();
+    }
+    private void OnShieldThrowStarted(InputAction.CallbackContext context)
+    {
+        ShieldThrowPressed?.Invoke();
+    }
+
+    private void OnShieldRecallStarted(InputAction.CallbackContext context)
+    {
+        ShieldRecallPressed?.Invoke();
     }
 }

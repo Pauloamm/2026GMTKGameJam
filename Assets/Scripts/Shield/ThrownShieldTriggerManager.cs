@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.Events;
+using System;
 
 public class ThrownShieldTriggerManager : MonoBehaviour
 {
     [SerializeField] private LayerMask layersToIgnore;
 
-    public UnityEvent OnShieldRicochet;
-    public UnityEvent OnShieldCloseToPlayerWhileRecalling;
+    public event Action OnShieldRicochet;
+    public event Action OnShieldCloseToPlayerWhileRecalling;
 
     private bool isRecalling;
 

@@ -1,15 +1,14 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ShieldExplosionCountdownTextManager : MonoBehaviour
-{ [SerializeField] private ShieldCountdownExplosionManager explosionManager;
+{
+    [SerializeField] private ShieldCountdownExplosionManager explosionManager;
     [SerializeField] private TMP_Text countdownText;
 
     private void Awake()
     {
-        explosionManager.OnCountdownTick.AddListener(UpdateCountdownText);
+        explosionManager.OnCountdownTick += UpdateCountdownText;
     }
 
     private void UpdateCountdownText(float timeRemaining)

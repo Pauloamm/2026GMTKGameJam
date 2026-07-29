@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ShieldCountdownExplosionManager : MonoBehaviour
 {
@@ -20,8 +20,8 @@ public class ShieldCountdownExplosionManager : MonoBehaviour
     [SerializeField] private float explosionRadius = 2f;
 
 
-    public UnityEvent OnShieldExplode;
-    public UnityEvent<float> OnCountdownTick;
+    public event Action OnShieldExplode;
+    public event Action<float> OnCountdownTick;
 
     public float TimeUntilExplosion => currentCountdown;
 
@@ -72,7 +72,11 @@ public class ShieldCountdownExplosionManager : MonoBehaviour
 
             IDamageable creature = hit.GetComponentInChildren<IDamageable>();
             if (creature != null)
+            {
+                Debug.Log("Explosion dealt damage to " + hit.gameObject.name);
                 creature.TakeDamage(currentExplosionDamage);
+            }
+                
         }
 
         OnShieldExplode?.Invoke();
