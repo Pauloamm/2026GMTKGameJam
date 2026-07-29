@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class BossController : EnemyBase
 {
@@ -48,8 +48,7 @@ public class BossController : EnemyBase
     [SerializeField] private string idleTrigger = "Idle";
 
 
-    public UnityEvent OnBossEngaged;
-
+    public event Action OnBossEngaged;
 
     protected override void Awake()
     {
@@ -91,7 +90,7 @@ public class BossController : EnemyBase
 
             if (currentHealth <= 0) yield break;
 
-            AttackType attack = (AttackType)Random.Range(0, 4);  
+            AttackType attack = (AttackType)UnityEngine.Random.Range(0, 4);  
             Debug.Log("PROXIMO ATAQUE DO BOSS É" + attack);
             yield return StartCoroutine(ExecuteAttack(attack));
         }
@@ -128,7 +127,7 @@ public class BossController : EnemyBase
 
         for (int i = 0; i < volleyShotCount; i++)
         {
-            Vector2 fakeTarget = (Vector2)transform.position + new Vector2(direction * Random.Range(1.5f, 7f), Random.Range(0.5f, 2f));
+            Vector2 fakeTarget = (Vector2)transform.position + new Vector2(direction * UnityEngine.Random.Range(1.5f, 7f), UnityEngine.Random.Range(0.5f, 2f));
             projectileLauncher.Fire(fakeTarget);
             yield return new WaitForSeconds(volleyShotDelay);
         }
@@ -183,8 +182,8 @@ public class BossController : EnemyBase
 
     private float GetRandomFallingProjectileSpawnX()
     {
-        float offset = Random.Range(fallingProjectileExclusionRadius, fallingProjectileSpawnRangeX);
-        float side = Random.value < 0.5f ? -1f : 1f;
+        float offset = UnityEngine.Random.Range(fallingProjectileExclusionRadius, fallingProjectileSpawnRangeX);
+        float side = UnityEngine.Random.value < 0.5f ? -1f : 1f;
 
         return transform.position.x + (offset * side);
     }

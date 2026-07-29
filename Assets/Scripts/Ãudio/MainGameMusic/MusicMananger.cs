@@ -43,7 +43,7 @@ public class MusicManager : MonoBehaviour
 
         if (boss != null)
         {
-            boss.OnBossEngaged.AddListener(StartBossMusic);
+            boss.OnBossEngaged+=StartBossMusic;
             boss.OnDeath += HandleBossDeath;
         }
 

@@ -9,7 +9,7 @@ public class BossDialogManager : MonoBehaviour
 
     private void Awake()
     {
-        boss.OnBossEngaged.AddListener(HandleBossEngaged);
+        boss.OnBossEngaged+=HandleBossEngaged;
     }
 
     private void HandleBossEngaged()

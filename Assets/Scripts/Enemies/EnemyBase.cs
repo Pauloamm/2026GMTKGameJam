@@ -40,12 +40,13 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        
+        if (!other.CompareTag("Player")) return;
 
         IDamageable player = other.GetComponentInChildren<IDamageable>();
         if (player != null)
+        {
             player.TakeDamage(contactDamage);
-        
+        }
     }
 
     protected void FaceDirection(float direction)
