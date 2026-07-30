@@ -13,22 +13,19 @@ public class AttackHitbox : MonoBehaviour
 
     public UnityEvent OnParried;
 
-    private readonly List<Collider2D> collidersToIgnore = new List<Collider2D>();
-
     public bool IsParryable
     {
         get => isParryable;
         set => isParryable = value;
     }
 
-    public void IgnoreColliders(IEnumerable<Collider2D> colliders)
-    {
-        collidersToIgnore.AddRange(colliders);
-    }
+    [SerializeField] private ColliderIgnoreList ignoreList;
+
+    public void IgnoreColliders(IEnumerable<Collider2D> colliders) => ignoreList.Add(colliders);
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collidersToIgnore.Contains(other)) return;
+        if (ignoreList.Contains(other)) return;
 
         // if it doesnt hit a player at least check if it deals damage
         if (!other.CompareTag("Player"))

@@ -286,6 +286,51 @@ MonoBehaviour:
   OnParried:
     m_PersistentCalls:
       m_Calls: []
+  ignoreList: {fileID: 1290167318481363764}
+--- !u!1 &7664813373263054744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4304648612060398908}
+  - component: {fileID: 1290167318481363764}
+  m_Layer: 0
+  m_Name: ColliderIgnoreListComponent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4304648612060398908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664813373263054744}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3193348233585240133}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1290167318481363764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664813373263054744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5329885f3f93f5a4080effd18174bd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderIgnoreList
 --- !u!1 &8132458966033321195
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +404,7 @@ Transform:
   - {fileID: 7999659234878058378}
   - {fileID: 4642748595362993287}
   - {fileID: 8341883903084201336}
+  - {fileID: 4304648612060398908}
   m_Father: {fileID: 4107387055919544084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4799609654693638427
@@ -504,9 +550,6 @@ MonoBehaviour:
   bossAnimator: {fileID: 1563303695535594203}
   fallingProjectilesTelegraphTrigger: FallingProjectilesTelegraphTrigger
   idleTrigger: Idle
-  OnBossEngaged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3932309988096243086
 MonoBehaviour:
   m_ObjectHideFlags: 0

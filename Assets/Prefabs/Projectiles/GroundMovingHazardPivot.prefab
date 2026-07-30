@@ -30,8 +30,53 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1679557868866393891}
+  - {fileID: 8713117334506570038}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7958774206027945056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8713117334506570038}
+  - component: {fileID: 5684514747029998819}
+  m_Layer: 0
+  m_Name: ColliderIgnoreListComponent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8713117334506570038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958774206027945056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1460290648907874911}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5684514747029998819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958774206027945056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5329885f3f93f5a4080effd18174bd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderIgnoreList
 --- !u!1 &8493179798518104423
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +163,7 @@ MonoBehaviour:
   OnParried:
     m_PersistentCalls:
       m_Calls: []
+  ignoreList: {fileID: 5684514747029998819}
 --- !u!222 &5021291925582188335
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -195,6 +241,7 @@ MonoBehaviour:
   OnDestroyed:
     m_PersistentCalls:
       m_Calls: []
+  ignoreList: {fileID: 5684514747029998819}
 --- !u!95 &8500188393982326354
 Animator:
   serializedVersion: 7

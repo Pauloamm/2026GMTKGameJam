@@ -12,14 +12,15 @@ public class Projectile : MonoBehaviour
 
     public UnityEvent OnDestroyed;
 
-    private readonly List<Collider2D> collidersToIgnore = new List<Collider2D>();
 
     [Header("Rotation")]
     [SerializeField] private bool rotateToFaceDirection;
     private Rigidbody2D rb;
 
 
-    public void IgnoreColliders(IEnumerable<Collider2D> colliders) => collidersToIgnore.AddRange(colliders);
+    [SerializeField] private ColliderIgnoreList ignoreList;
+
+    public void IgnoreColliders(IEnumerable<Collider2D> colliders) => ignoreList.Add(colliders);
 
     private void Awake()
     {
@@ -39,7 +40,7 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collidersToIgnore.Contains(other)) return;
+        if (ignoreList.Contains(other)) return;
 
         bool hitPlayer = other.CompareTag("Player");
         bool hitEnvironment = (destroyOnLayers.value & (1 << other.gameObject.layer)) != 0;

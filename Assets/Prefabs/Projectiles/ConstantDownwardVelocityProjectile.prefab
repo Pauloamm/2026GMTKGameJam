@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6078860698435107404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5910756723754366383}
+  - component: {fileID: 5644701011045408501}
+  m_Layer: 0
+  m_Name: ColliderIgnoreListComponent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5910756723754366383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078860698435107404}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8466107238928201367}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5644701011045408501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078860698435107404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5329885f3f93f5a4080effd18174bd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderIgnoreList
 --- !u!1 &7519017303692859142
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,7 +78,8 @@ Transform:
   m_LocalPosition: {x: -3.95, y: -3.015, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 5910756723754366383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &74717305977802046
@@ -130,6 +175,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   rotateToFaceDirection: 0
+  ignoreList: {fileID: 5644701011045408501}
 --- !u!114 &423704632078640391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +193,7 @@ MonoBehaviour:
   OnParried:
     m_PersistentCalls:
       m_Calls: []
+  ignoreList: {fileID: 5644701011045408501}
 --- !u!50 &773776333284052226
 Rigidbody2D:
   serializedVersion: 5
