@@ -12,16 +12,9 @@ public class ForwardLaunchProjectileBehaviour : MonoBehaviour, IProjectileLaunch
 
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
 
-        Collider2D[] collidersToIgnore = GetComponentsInChildren<Collider2D>();
-
         if (projectile.TryGetComponent<Projectile>(out Projectile projectileScript))
         {
-            projectileScript.IgnoreColliders(collidersToIgnore);
-        }
-
-        if (projectile.TryGetComponent<AttackHitbox>(out AttackHitbox hitbox))
-        {
-            hitbox.IgnoreColliders(collidersToIgnore);
+            projectileScript.IgnoreColliders(GetComponentsInChildren<Collider2D>());
         }
 
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();

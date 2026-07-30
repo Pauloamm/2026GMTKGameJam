@@ -151,15 +151,8 @@ public class BossController : EnemyBase
         scale.x = Mathf.Abs(scale.x) * direction;
         wave.transform.localScale = scale;
 
-        Collider2D[] collidersToIgnore = GetComponentsInChildren<Collider2D>();
-
-
         GroundMovingHazard hazard = wave.GetComponentInChildren<GroundMovingHazard>();
-        hazard.IgnoreColliders(collidersToIgnore);
-
-        AttackHitbox hitbox = wave.GetComponentInChildren<AttackHitbox>();
-        hitbox.IgnoreColliders(collidersToIgnore);
-
+        hazard.IgnoreColliders(GetComponentsInChildren<Collider2D>());
     }
 
     private IEnumerator FallingProjectilesRoutine()
@@ -192,16 +185,9 @@ public class BossController : EnemyBase
     {
         GameObject fallingProjectile = Instantiate(fallingProjectilePrefab, spawnPosition, Quaternion.identity);
 
-        Collider2D[] collidersToIgnore = GetComponentsInChildren<Collider2D>();
-
         if (fallingProjectile.TryGetComponent<Projectile>(out Projectile projectileScript))
         {
-            projectileScript.IgnoreColliders(collidersToIgnore);
-        }
-
-        if (fallingProjectile.TryGetComponent<AttackHitbox>(out AttackHitbox hitbox))
-        {
-            hitbox.IgnoreColliders(collidersToIgnore);
+            projectileScript.IgnoreColliders(GetComponentsInChildren<Collider2D>());
         }
     }
 

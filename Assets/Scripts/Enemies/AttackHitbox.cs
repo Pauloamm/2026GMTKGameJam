@@ -1,7 +1,6 @@
+using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public class AttackHitbox : MonoBehaviour
@@ -10,8 +9,10 @@ public class AttackHitbox : MonoBehaviour
     [SerializeField] private int damage = 1;
     [SerializeField] private bool isParryable;
 
+    [SerializeField] private ColliderIgnoreList ignoreList;
 
-    public UnityEvent OnParried;
+    public event Action OnParried;
+    public event Action<Collider2D> OnHitboxTriggered;
 
     public bool IsParryable
     {
@@ -19,38 +20,37 @@ public class AttackHitbox : MonoBehaviour
         set => isParryable = value;
     }
 
-    [SerializeField] private ColliderIgnoreList ignoreList;
-
     public void IgnoreColliders(IEnumerable<Collider2D> colliders) => ignoreList.Add(colliders);
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (ignoreList.Contains(other)) return;
 
-        // if it doesnt hit a player at least check if it deals damage
         if (!other.CompareTag("Player"))
         {
-
             if (other.TryGetComponent<IDamageable>(out IDamageable damageable))
             {
                 damageable.TakeDamage(damage);
-
             }
 
+            OnHitboxTriggered?.Invoke(other);
             return;
         }
 
-        //If it is player get necessary components
         PlayerParrySystem playerParrySystem = other.GetComponentInChildren<PlayerParrySystem>();
         ShieldCountdownExplosionManager shieldExplosionManager = other.GetComponentInChildren<ShieldCountdownExplosionManager>();
-        IDamageable playerLifeSsystem = other.GetComponentInChildren<IDamageable>();
-
+        IDamageable playerLifeSystem = other.GetComponentInChildren<IDamageable>();
 
         if (isParryable && playerParrySystem.IsParryWindowActive)
         {
             shieldExplosionManager.OnParrySuccess();
             OnParried?.Invoke();
         }
-        else playerLifeSsystem.TakeDamage(damage);
+        else
+        {
+            playerLifeSystem.TakeDamage(damage);
+        }
+
+        OnHitboxTriggered?.Invoke(other);
     }
 }

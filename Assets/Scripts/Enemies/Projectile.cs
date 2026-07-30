@@ -1,6 +1,6 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
@@ -10,26 +10,27 @@ public class Projectile : MonoBehaviour
     [Header("Destroy Conditions")]
     [SerializeField] private LayerMask destroyOnLayers;
 
-    public UnityEvent OnDestroyed;
-
-
     [Header("Rotation")]
     [SerializeField] private bool rotateToFaceDirection;
+
+    [Header("Hitbox")]
+    [SerializeField] private AttackHitbox attackHitbox;
+
+    public event Action OnDestroyed;
+
     private Rigidbody2D rb;
-
-
-    [SerializeField] private ColliderIgnoreList ignoreList;
-
-    public void IgnoreColliders(IEnumerable<Collider2D> colliders) => ignoreList.Add(colliders);
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        attackHitbox.OnHitboxTriggered += HandleHitboxTriggered;
     }
+
     private void Start()
     {
         Invoke(nameof(DestroyProjectile), lifetime);
     }
+
     private void Update()
     {
         if (rotateToFaceDirection && rb.linearVelocity != Vector2.zero)
@@ -38,10 +39,9 @@ public class Projectile : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    public void IgnoreColliders(IEnumerable<Collider2D> colliders) => attackHitbox.IgnoreColliders(colliders);
+    private void HandleHitboxTriggered(Collider2D other)
     {
-        if (ignoreList.Contains(other)) return;
-
         bool hitPlayer = other.CompareTag("Player");
         bool hitEnvironment = (destroyOnLayers.value & (1 << other.gameObject.layer)) != 0;
 

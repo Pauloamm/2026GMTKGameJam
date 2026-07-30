@@ -111,9 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackHitbox
   damage: 1
   isParryable: 1
-  OnParried:
-    m_PersistentCalls:
-      m_Calls: []
   ignoreList: {fileID: 7059954412337689094}
 --- !u!114 &35097173204917084
 MonoBehaviour:
@@ -131,11 +128,8 @@ MonoBehaviour:
   destroyOnLayers:
     serializedVersion: 2
     m_Bits: 1079
-  OnDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
   rotateToFaceDirection: 1
-  ignoreList: {fileID: 7059954412337689094}
+  attackHitbox: {fileID: 3067938984028167956}
 --- !u!50 &269281081184552412
 Rigidbody2D:
   serializedVersion: 5

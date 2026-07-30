@@ -160,9 +160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackHitbox
   damage: 2
   isParryable: 0
-  OnParried:
-    m_PersistentCalls:
-      m_Calls: []
   ignoreList: {fileID: 5684514747029998819}
 --- !u!222 &5021291925582188335
 CanvasRenderer:
@@ -238,10 +235,7 @@ MonoBehaviour:
   destroyOnLayers:
     serializedVersion: 2
     m_Bits: 0
-  OnDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
-  ignoreList: {fileID: 5684514747029998819}
+  attackHitbox: {fileID: 7692248720298790464}
 --- !u!95 &8500188393982326354
 Animator:
   serializedVersion: 7

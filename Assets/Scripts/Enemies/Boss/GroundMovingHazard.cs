@@ -1,6 +1,6 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class GroundMovingHazard : MonoBehaviour
 {
@@ -10,21 +10,23 @@ public class GroundMovingHazard : MonoBehaviour
     [Header("Destroy Conditions")]
     [SerializeField] private LayerMask destroyOnLayers;
 
-    public UnityEvent OnDestroyed;
+    [Header("Hitbox")]
+    [SerializeField] private AttackHitbox attackHitbox;
 
-    [SerializeField] private ColliderIgnoreList ignoreList;
+    public event Action OnDestroyed;
 
-    public void IgnoreColliders(IEnumerable<Collider2D> colliders) => ignoreList.Add(colliders);
+    private void Awake()
+    {
+        attackHitbox.OnHitboxTriggered += HandleHitboxTriggered;
+    }
 
     private void Start()
     {
         Invoke(nameof(DestroyHazard), lifetime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void HandleHitboxTriggered(Collider2D other)
     {
-        if (ignoreList.Contains(other)) return;
-
         bool hitEnvironment = (destroyOnLayers.value & (1 << other.gameObject.layer)) != 0;
 
         if (hitEnvironment)
@@ -32,7 +34,7 @@ public class GroundMovingHazard : MonoBehaviour
             DestroyHazard();
         }
     }
-
+    public void IgnoreColliders(IEnumerable<Collider2D> colliders) => attackHitbox.IgnoreColliders(colliders);
     private void DestroyHazard()
     {
         CancelInvoke(nameof(DestroyHazard));
